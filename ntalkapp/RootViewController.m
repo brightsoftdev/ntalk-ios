@@ -10,6 +10,10 @@
 
 @implementation RootViewController
 
+- (void)dealloc
+{
+    [super dealloc];
+}
 
 - (void)viewDidLoad
 {
@@ -64,9 +68,9 @@
     // For example: self.myOutlet = nil;
 }
 
-- (void)dealloc
+-(void)showPreferences
 {
-    [super dealloc];
+    NSLog(@"show preferences");
 }
 
 @end

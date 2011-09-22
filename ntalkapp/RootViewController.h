@@ -10,4 +10,6 @@
 
 @interface RootViewController : UIViewController
 
+- (void) showPreferences;
+
 @end
