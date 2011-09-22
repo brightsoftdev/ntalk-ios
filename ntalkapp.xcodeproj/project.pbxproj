@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9558F177142AF8DC00A76D67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F176142AF8DC00A76D67 /* UIKit.framework */; };
+		9558F179142AF8DC00A76D67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F178142AF8DC00A76D67 /* Foundation.framework */; };
+		9558F17B142AF8DC00A76D67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F17A142AF8DC00A76D67 /* CoreGraphics.framework */; };
+		9558F181142AF8DC00A76D67 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9558F17F142AF8DC00A76D67 /* InfoPlist.strings */; };
+		9558F183142AF8DC00A76D67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558F182142AF8DC00A76D67 /* main.m */; };
+		9558F187142AF8DC00A76D67 /* ntalkappAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */; };
+		9558F18A142AF8DC00A76D67 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558F188142AF8DC00A76D67 /* MainWindow.xib */; };
+		9558F18D142AF8DC00A76D67 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558F18C142AF8DC00A76D67 /* RootViewController.m */; };
+		9558F190142AF8DC00A76D67 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558F18E142AF8DC00A76D67 /* RootViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9558F172142AF8DC00A76D67 /* ntalkapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ntalkapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9558F176142AF8DC00A76D67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9558F178142AF8DC00A76D67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9558F17A142AF8DC00A76D67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9558F17E142AF8DC00A76D67 /* ntalkapp-Info.plist */ = {isa = PBXFileReference; path = "ntalkapp-Info.plist"; sourceTree = "<group>"; };
+		9558F180142AF8DC00A76D67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9558F182142AF8DC00A76D67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9558F184142AF8DC00A76D67 /* ntalkapp-Prefix.pch */ = {isa = PBXFileReference; path = "ntalkapp-Prefix.pch"; sourceTree = "<group>"; };
+		9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */ = {isa = PBXFileReference; path = ntalkappAppDelegate.h; sourceTree = "<group>"; };
+		9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ntalkappAppDelegate.m; sourceTree = "<group>"; };
+		9558F189142AF8DC00A76D67 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		9558F18B142AF8DC00A76D67 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		9558F18C142AF8DC00A76D67 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		9558F18F142AF8DC00A76D67 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9558F16F142AF8DC00A76D67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9558F177142AF8DC00A76D67 /* UIKit.framework in Frameworks */,
+				9558F179142AF8DC00A76D67 /* Foundation.framework in Frameworks */,
+				9558F17B142AF8DC00A76D67 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9558F167142AF8DB00A76D67 = {
+			isa = PBXGroup;
+			children = (
+				9558F17C142AF8DC00A76D67 /* ntalkapp */,
+				9558F175142AF8DC00A76D67 /* Frameworks */,
+				9558F173142AF8DC00A76D67 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9558F173142AF8DC00A76D67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9558F172142AF8DC00A76D67 /* ntalkapp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9558F175142AF8DC00A76D67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9558F176142AF8DC00A76D67 /* UIKit.framework */,
+				9558F178142AF8DC00A76D67 /* Foundation.framework */,
+				9558F17A142AF8DC00A76D67 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9558F17C142AF8DC00A76D67 /* ntalkapp */ = {
+			isa = PBXGroup;
+			children = (
+				9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */,
+				9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */,
+				9558F188142AF8DC00A76D67 /* MainWindow.xib */,
+				9558F18B142AF8DC00A76D67 /* RootViewController.h */,
+				9558F18C142AF8DC00A76D67 /* RootViewController.m */,
+				9558F18E142AF8DC00A76D67 /* RootViewController.xib */,
+				9558F17D142AF8DC00A76D67 /* Supporting Files */,
+			);
+			path = ntalkapp;
+			sourceTree = "<group>";
+		};
+		9558F17D142AF8DC00A76D67 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9558F17E142AF8DC00A76D67 /* ntalkapp-Info.plist */,
+				9558F17F142AF8DC00A76D67 /* InfoPlist.strings */,
+				9558F182142AF8DC00A76D67 /* main.m */,
+				9558F184142AF8DC00A76D67 /* ntalkapp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9558F171142AF8DC00A76D67 /* ntalkapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9558F193142AF8DC00A76D67 /* Build configuration list for PBXNativeTarget "ntalkapp" */;
+			buildPhases = (
+				9558F16E142AF8DC00A76D67 /* Sources */,
+				9558F16F142AF8DC00A76D67 /* Frameworks */,
+				9558F170142AF8DC00A76D67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ntalkapp;
+			productName = ntalkapp;
+			productReference = 9558F172142AF8DC00A76D67 /* ntalkapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9558F169142AF8DB00A76D67 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 9558F16C142AF8DB00A76D67 /* Build configuration list for PBXProject "ntalkapp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9558F167142AF8DB00A76D67;
+			productRefGroup = 9558F173142AF8DC00A76D67 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9558F171142AF8DC00A76D67 /* ntalkapp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9558F170142AF8DC00A76D67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9558F181142AF8DC00A76D67 /* InfoPlist.strings in Resources */,
+				9558F18A142AF8DC00A76D67 /* MainWindow.xib in Resources */,
+				9558F190142AF8DC00A76D67 /* RootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9558F16E142AF8DC00A76D67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9558F183142AF8DC00A76D67 /* main.m in Sources */,
+				9558F187142AF8DC00A76D67 /* ntalkappAppDelegate.m in Sources */,
+				9558F18D142AF8DC00A76D67 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9558F17F142AF8DC00A76D67 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9558F180142AF8DC00A76D67 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9558F188142AF8DC00A76D67 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9558F189142AF8DC00A76D67 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		9558F18E142AF8DC00A76D67 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9558F18F142AF8DC00A76D67 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9558F191142AF8DC00A76D67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9558F192142AF8DC00A76D67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9558F194142AF8DC00A76D67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ntalkapp/ntalkapp-Prefix.pch";
+				INFOPLIST_FILE = "ntalkapp/ntalkapp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9558F195142AF8DC00A76D67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ntalkapp/ntalkapp-Prefix.pch";
+				INFOPLIST_FILE = "ntalkapp/ntalkapp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9558F16C142AF8DB00A76D67 /* Build configuration list for PBXProject "ntalkapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9558F191142AF8DC00A76D67 /* Debug */,
+				9558F192142AF8DC00A76D67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9558F193142AF8DC00A76D67 /* Build configuration list for PBXNativeTarget "ntalkapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9558F194142AF8DC00A76D67 /* Debug */,
+				9558F195142AF8DC00A76D67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9558F169142AF8DB00A76D67 /* Project object */;
+}
