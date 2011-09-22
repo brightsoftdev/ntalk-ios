@@ -14,6 +14,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *b = [[UIBarButtonItem alloc] initWithTitle:@"Preferencias" style:UIBarButtonItemStylePlain target:self action:@selector(showPreferences)];
+    self.navigationItem.leftBarButtonItem = b;
+    [b release];
 }
 
 - (void)viewWillAppear:(BOOL)animated

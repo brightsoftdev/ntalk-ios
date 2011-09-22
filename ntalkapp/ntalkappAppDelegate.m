@@ -75,7 +75,9 @@
 
 - (void)didGetAuthenticationToken: (NSNotification*) n {
     //TODO enviar info via asihttprequest    
-    NSLog(@"userinfo %@ %@", [n.userInfo objectForKey:@"email"], [n.userInfo objectForKey:@"password"]);
+    NSLog(@"userinfo %@ %@", 
+          [n.userInfo objectForKey:@"email"], 
+          [n.userInfo objectForKey:@"password"]);
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"didGetAuthToken" object:nil];
     [self.window.rootViewController dismissModalViewControllerAnimated:YES];
 }
