@@ -26,6 +26,9 @@
 		9558F1A8142AF93400A76D67 /* WalkthroughScreen3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558F19E142AF93400A76D67 /* WalkthroughScreen3.xib */; };
 		9558F1A9142AF93400A76D67 /* WalktroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558F19F142AF93400A76D67 /* WalktroughViewController.m */; };
 		9558F1AA142AF93400A76D67 /* WalktroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558F1A0142AF93400A76D67 /* WalktroughViewController.xib */; };
+		9558F1B3142AFBFD00A76D67 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9558F1B0142AFBFC00A76D67 /* button.png */; };
+		9558F1B4142AFBFD00A76D67 /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 9558F1B1142AFBFC00A76D67 /* contacts.png */; };
+		9558F1B5142AFBFD00A76D67 /* gift.png in Resources */ = {isa = PBXBuildFile; fileRef = 9558F1B2142AFBFC00A76D67 /* gift.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,9 @@
 		9558F1AC142AF9F100A76D67 /* TextEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEditCell.h; sourceTree = "<group>"; };
 		9558F1AD142AF9F100A76D67 /* WalkthroughScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughScreen.h; sourceTree = "<group>"; };
 		9558F1AE142AF9F100A76D67 /* WalktroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalktroughViewController.h; sourceTree = "<group>"; };
+		9558F1B0142AFBFC00A76D67 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		9558F1B1142AFBFC00A76D67 /* contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacts.png; sourceTree = "<group>"; };
+		9558F1B2142AFBFC00A76D67 /* gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gift.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 		9558F17C142AF8DC00A76D67 /* ntalkapp */ = {
 			isa = PBXGroup;
 			children = (
+				9558F1AF142AFBFC00A76D67 /* Resources */,
 				9558F196142AF93400A76D67 /* Walktrough */,
 				9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */,
 				9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */,
@@ -146,6 +153,16 @@
 			);
 			name = Walktrough;
 			path = recursos;
+			sourceTree = "<group>";
+		};
+		9558F1AF142AFBFC00A76D67 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9558F1B0142AFBFC00A76D67 /* button.png */,
+				9558F1B1142AFBFC00A76D67 /* contacts.png */,
+				9558F1B2142AFBFC00A76D67 /* gift.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +221,9 @@
 				9558F1A7142AF93400A76D67 /* WalkthroughScreen2.xib in Resources */,
 				9558F1A8142AF93400A76D67 /* WalkthroughScreen3.xib in Resources */,
 				9558F1AA142AF93400A76D67 /* WalktroughViewController.xib in Resources */,
+				9558F1B3142AFBFD00A76D67 /* button.png in Resources */,
+				9558F1B4142AFBFD00A76D67 /* contacts.png in Resources */,
+				9558F1B5142AFBFD00A76D67 /* gift.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

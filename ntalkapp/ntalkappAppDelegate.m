@@ -19,10 +19,17 @@
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetAuthenticationToken:) name:@"didGetAuthToken" object:nil];
-    WalktroughViewController* wvc = [[WalktroughViewController alloc] init];
-    [self.window.rootViewController presentModalViewController:wvc animated:YES];
-    [wvc release];
+    id token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
+    if (token == nil) {
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetAuthenticationToken:) name:@"didGetAuthToken" object:nil];
+        WalktroughViewController* wvc = [[WalktroughViewController alloc] init];
+        [self.window.rootViewController presentModalViewController:wvc animated:YES];
+        
+        [wvc release];
+    } else {
+        //TODO necesitamos algo? Aqui se supone que ya hay un token valido
+    }
     
     return YES;
 }
