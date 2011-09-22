@@ -7,6 +7,7 @@
 //
 
 #import "ntalkappAppDelegate.h"
+#import "WalktroughViewController.h"
 
 @implementation ntalkappAppDelegate
 
@@ -15,10 +16,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    // Add the navigation controller's view to the window and display.
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetAuthenticationToken:) name:@"didGetAuthToken" object:nil];
+    WalktroughViewController* wvc = [[WalktroughViewController alloc] init];
+    [self.window.rootViewController presentModalViewController:wvc animated:YES];
+    [wvc release];
+    
     return YES;
 }
 
@@ -59,6 +64,13 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (void)didGetAuthenticationToken: (NSNotification*) n {
+    //TODO enviar info via asihttprequest    
+    NSLog(@"userinfo %@ %@", [n.userInfo objectForKey:@"email"], [n.userInfo objectForKey:@"password"]);
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"didGetAuthToken" object:nil];
+    [self.window.rootViewController dismissModalViewControllerAnimated:YES];
 }
 
 - (void)dealloc

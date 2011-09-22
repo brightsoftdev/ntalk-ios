@@ -14,4 +14,6 @@
 
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 
+-(void) didGetAuthenticationToken:(NSNotification*) n;
+
 @end

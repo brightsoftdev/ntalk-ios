@@ -16,6 +16,16 @@
 		9558F18A142AF8DC00A76D67 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558F188142AF8DC00A76D67 /* MainWindow.xib */; };
 		9558F18D142AF8DC00A76D67 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558F18C142AF8DC00A76D67 /* RootViewController.m */; };
 		9558F190142AF8DC00A76D67 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558F18E142AF8DC00A76D67 /* RootViewController.xib */; };
+		9558F1A1142AF93400A76D67 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558F197142AF93400A76D67 /* LoginViewController.m */; };
+		9558F1A2142AF93400A76D67 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558F198142AF93400A76D67 /* LoginViewController.xib */; };
+		9558F1A3142AF93400A76D67 /* TextEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558F199142AF93400A76D67 /* TextEditCell.m */; };
+		9558F1A4142AF93400A76D67 /* TextEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558F19A142AF93400A76D67 /* TextEditCell.xib */; };
+		9558F1A5142AF93400A76D67 /* WalkthroughScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558F19B142AF93400A76D67 /* WalkthroughScreen.m */; };
+		9558F1A6142AF93400A76D67 /* WalkthroughScreen1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558F19C142AF93400A76D67 /* WalkthroughScreen1.xib */; };
+		9558F1A7142AF93400A76D67 /* WalkthroughScreen2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558F19D142AF93400A76D67 /* WalkthroughScreen2.xib */; };
+		9558F1A8142AF93400A76D67 /* WalkthroughScreen3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558F19E142AF93400A76D67 /* WalkthroughScreen3.xib */; };
+		9558F1A9142AF93400A76D67 /* WalktroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9558F19F142AF93400A76D67 /* WalktroughViewController.m */; };
+		9558F1AA142AF93400A76D67 /* WalktroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558F1A0142AF93400A76D67 /* WalktroughViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +33,30 @@
 		9558F176142AF8DC00A76D67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9558F178142AF8DC00A76D67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9558F17A142AF8DC00A76D67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9558F17E142AF8DC00A76D67 /* ntalkapp-Info.plist */ = {isa = PBXFileReference; path = "ntalkapp-Info.plist"; sourceTree = "<group>"; };
+		9558F17E142AF8DC00A76D67 /* ntalkapp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ntalkapp-Info.plist"; sourceTree = "<group>"; };
 		9558F180142AF8DC00A76D67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9558F182142AF8DC00A76D67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9558F184142AF8DC00A76D67 /* ntalkapp-Prefix.pch */ = {isa = PBXFileReference; path = "ntalkapp-Prefix.pch"; sourceTree = "<group>"; };
-		9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */ = {isa = PBXFileReference; path = ntalkappAppDelegate.h; sourceTree = "<group>"; };
+		9558F184142AF8DC00A76D67 /* ntalkapp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ntalkapp-Prefix.pch"; sourceTree = "<group>"; };
+		9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ntalkappAppDelegate.h; sourceTree = "<group>"; };
 		9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ntalkappAppDelegate.m; sourceTree = "<group>"; };
 		9558F189142AF8DC00A76D67 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		9558F18B142AF8DC00A76D67 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		9558F18B142AF8DC00A76D67 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		9558F18C142AF8DC00A76D67 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		9558F18F142AF8DC00A76D67 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		9558F197142AF93400A76D67 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9558F198142AF93400A76D67 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		9558F199142AF93400A76D67 /* TextEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEditCell.m; sourceTree = "<group>"; };
+		9558F19A142AF93400A76D67 /* TextEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextEditCell.xib; sourceTree = "<group>"; };
+		9558F19B142AF93400A76D67 /* WalkthroughScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughScreen.m; sourceTree = "<group>"; };
+		9558F19C142AF93400A76D67 /* WalkthroughScreen1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkthroughScreen1.xib; sourceTree = "<group>"; };
+		9558F19D142AF93400A76D67 /* WalkthroughScreen2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkthroughScreen2.xib; sourceTree = "<group>"; };
+		9558F19E142AF93400A76D67 /* WalkthroughScreen3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkthroughScreen3.xib; sourceTree = "<group>"; };
+		9558F19F142AF93400A76D67 /* WalktroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalktroughViewController.m; sourceTree = "<group>"; };
+		9558F1A0142AF93400A76D67 /* WalktroughViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalktroughViewController.xib; sourceTree = "<group>"; };
+		9558F1AB142AF9F100A76D67 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9558F1AC142AF9F100A76D67 /* TextEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEditCell.h; sourceTree = "<group>"; };
+		9558F1AD142AF9F100A76D67 /* WalkthroughScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughScreen.h; sourceTree = "<group>"; };
+		9558F1AE142AF9F100A76D67 /* WalktroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalktroughViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +103,7 @@
 		9558F17C142AF8DC00A76D67 /* ntalkapp */ = {
 			isa = PBXGroup;
 			children = (
+				9558F196142AF93400A76D67 /* Walktrough */,
 				9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */,
 				9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */,
 				9558F188142AF8DC00A76D67 /* MainWindow.xib */,
@@ -99,6 +124,28 @@
 				9558F184142AF8DC00A76D67 /* ntalkapp-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9558F196142AF93400A76D67 /* Walktrough */ = {
+			isa = PBXGroup;
+			children = (
+				9558F197142AF93400A76D67 /* LoginViewController.m */,
+				9558F198142AF93400A76D67 /* LoginViewController.xib */,
+				9558F199142AF93400A76D67 /* TextEditCell.m */,
+				9558F19A142AF93400A76D67 /* TextEditCell.xib */,
+				9558F1AB142AF9F100A76D67 /* LoginViewController.h */,
+				9558F1AC142AF9F100A76D67 /* TextEditCell.h */,
+				9558F1AD142AF9F100A76D67 /* WalkthroughScreen.h */,
+				9558F1AE142AF9F100A76D67 /* WalktroughViewController.h */,
+				9558F19B142AF93400A76D67 /* WalkthroughScreen.m */,
+				9558F19C142AF93400A76D67 /* WalkthroughScreen1.xib */,
+				9558F19D142AF93400A76D67 /* WalkthroughScreen2.xib */,
+				9558F19E142AF93400A76D67 /* WalkthroughScreen3.xib */,
+				9558F19F142AF93400A76D67 /* WalktroughViewController.m */,
+				9558F1A0142AF93400A76D67 /* WalktroughViewController.xib */,
+			);
+			name = Walktrough;
+			path = recursos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +198,12 @@
 				9558F181142AF8DC00A76D67 /* InfoPlist.strings in Resources */,
 				9558F18A142AF8DC00A76D67 /* MainWindow.xib in Resources */,
 				9558F190142AF8DC00A76D67 /* RootViewController.xib in Resources */,
+				9558F1A2142AF93400A76D67 /* LoginViewController.xib in Resources */,
+				9558F1A4142AF93400A76D67 /* TextEditCell.xib in Resources */,
+				9558F1A6142AF93400A76D67 /* WalkthroughScreen1.xib in Resources */,
+				9558F1A7142AF93400A76D67 /* WalkthroughScreen2.xib in Resources */,
+				9558F1A8142AF93400A76D67 /* WalkthroughScreen3.xib in Resources */,
+				9558F1AA142AF93400A76D67 /* WalktroughViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +217,10 @@
 				9558F183142AF8DC00A76D67 /* main.m in Sources */,
 				9558F187142AF8DC00A76D67 /* ntalkappAppDelegate.m in Sources */,
 				9558F18D142AF8DC00A76D67 /* RootViewController.m in Sources */,
+				9558F1A1142AF93400A76D67 /* LoginViewController.m in Sources */,
+				9558F1A3142AF93400A76D67 /* TextEditCell.m in Sources */,
+				9558F1A5142AF93400A76D67 /* WalkthroughScreen.m in Sources */,
+				9558F1A9142AF93400A76D67 /* WalktroughViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +302,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ntalkapp/ntalkapp-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ntalkapp/ntalkapp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -256,6 +314,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ntalkapp/ntalkapp-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ntalkapp/ntalkapp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
