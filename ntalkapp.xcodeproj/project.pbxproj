@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951CD8DE1434311E005DE354 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CD8DD1434311E005DE354 /* JSONKit.m */; };
 		9558F177142AF8DC00A76D67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F176142AF8DC00A76D67 /* UIKit.framework */; };
 		9558F179142AF8DC00A76D67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F178142AF8DC00A76D67 /* Foundation.framework */; };
 		9558F17B142AF8DC00A76D67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F17A142AF8DC00A76D67 /* CoreGraphics.framework */; };
@@ -44,6 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		951CD8DC1434311E005DE354 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		951CD8DD1434311E005DE354 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		9558F172142AF8DC00A76D67 /* ntalkapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ntalkapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9558F176142AF8DC00A76D67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9558F178142AF8DC00A76D67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		951CD8DB1434311E005DE354 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				951CD8DC1434311E005DE354 /* JSONKit.h */,
+				951CD8DD1434311E005DE354 /* JSONKit.m */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
 		9558F167142AF8DB00A76D67 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +169,7 @@
 				9558F196142AF93400A76D67 /* Walktrough */,
 				9558F1BA142B022800A76D67 /* ASIHttpRequest */,
 				9558F1D4142B029600A76D67 /* Reachability */,
+				951CD8DB1434311E005DE354 /* JSONKit */,
 				9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */,
 				9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */,
 				9558F188142AF8DC00A76D67 /* MainWindow.xib */,
@@ -182,18 +195,18 @@
 		9558F196142AF93400A76D67 /* Walktrough */ = {
 			isa = PBXGroup;
 			children = (
-				9558F197142AF93400A76D67 /* LoginViewController.m */,
-				9558F198142AF93400A76D67 /* LoginViewController.xib */,
+				9558F1AC142AF9F100A76D67 /* TextEditCell.h */,
 				9558F199142AF93400A76D67 /* TextEditCell.m */,
 				9558F19A142AF93400A76D67 /* TextEditCell.xib */,
 				9558F1AB142AF9F100A76D67 /* LoginViewController.h */,
-				9558F1AC142AF9F100A76D67 /* TextEditCell.h */,
+				9558F197142AF93400A76D67 /* LoginViewController.m */,
+				9558F198142AF93400A76D67 /* LoginViewController.xib */,
 				9558F1AD142AF9F100A76D67 /* WalkthroughScreen.h */,
-				9558F1AE142AF9F100A76D67 /* WalktroughViewController.h */,
 				9558F19B142AF93400A76D67 /* WalkthroughScreen.m */,
 				9558F19C142AF93400A76D67 /* WalkthroughScreen1.xib */,
 				9558F19D142AF93400A76D67 /* WalkthroughScreen2.xib */,
 				9558F19E142AF93400A76D67 /* WalkthroughScreen3.xib */,
+				9558F1AE142AF9F100A76D67 /* WalktroughViewController.h */,
 				9558F19F142AF93400A76D67 /* WalktroughViewController.m */,
 				9558F1A0142AF93400A76D67 /* WalktroughViewController.xib */,
 			);
@@ -329,6 +342,7 @@
 				9558F1D2142B022800A76D67 /* ASIHTTPRequest.m in Sources */,
 				9558F1D3142B022800A76D67 /* ASIInputStream.m in Sources */,
 				9558F1D7142B029600A76D67 /* Reachability.m in Sources */,
+				951CD8DE1434311E005DE354 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +462,7 @@
 				9558F195142AF8DC00A76D67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

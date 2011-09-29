@@ -24,5 +24,7 @@
 @property (nonatomic, retain) NSString* emailValue;
 @property (nonatomic, retain) NSString* passwordValue;
 
+- (NSString*) grabTokenInBackgroundWithEmail:(NSString *)email andPassword:(NSString*)password;
+
 @end
 

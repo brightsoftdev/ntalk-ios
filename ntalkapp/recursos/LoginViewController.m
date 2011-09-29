@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "ASIFormDataRequest.h"
 
 @implementation LoginViewController
 @synthesize tableView = _tableView, loadCell = _loadCell;
@@ -94,16 +95,46 @@
         emailValue = textField.text;
     } else if (textField.tag == 1) {
         passwordValue = textField.text;
-        //TODO enviar esto via asihttprequest e intercambiarlo por un token
+        NSString *response = [self grabTokenInBackgroundWithEmail:emailValue andPassword:passwordValue];
+        NSLog(@"%@", response);
         
-        NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:
-                               emailValue, @"email",
-                               passwordValue, @"password",
-                              nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"didGetAuthToken" object:nil userInfo:dict];
+//        NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:
+//                               emailValue, @"email",
+//                               passwordValue, @"password",
+//                              nil];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"didGetAuthToken" object:nil userInfo:dict];
     }
     
     return NO;
+}
+
+#pragma mark - POST
+-(NSString *)grabTokenInBackgroundWithEmail:(NSString *)email andPassword:(NSString *)password
+{
+    NSString *url = @"http://ntalk.dev/users/sign_in.json";
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
+        [request setPostValue:email forKey:@"user[email]"];
+    [request setPostValue:password forKey:@"user[password]"];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        return [NSString stringWithFormat:@"%d: %@", [request responseStatusCode], [request responseString]];
+    } else {
+        switch (error.code) {
+            case NSURLErrorTimedOut:
+            case NSURLErrorNetworkConnectionLost:
+            case NSURLErrorNotConnectedToInternet:
+                NSLog(@"timeout");
+                break;
+            case NSURLErrorUserAuthenticationRequired:
+                NSLog(@"auth required");
+                break;
+            default:
+                NSLog(@"error code %i %@", error.code ,error);
+                break;
+        }
+        return nil;
+    }
 }
     
 
