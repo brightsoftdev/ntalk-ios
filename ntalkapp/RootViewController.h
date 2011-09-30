@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
+#import "SVProgressHUD.h"
 
-@interface RootViewController : UIViewController
+@interface RootViewController : BaseViewController {
+    double lat;
+    double lng;
+}
+
 
 - (void) showPreferences;
+- (IBAction)didTouchPanicButton:(id)sender;
 
 @end

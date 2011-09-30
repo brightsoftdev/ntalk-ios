@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 
 @implementation RootViewController
+static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json?auth_token=%@";
 
 - (void)dealloc
 {
@@ -73,4 +74,29 @@
     NSLog(@"show preferences");
 }
 
+- (void)didTouchPanicButton:(id)sender
+{
+    [SVProgressHUD showInView:self.view];
+    NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
+    NSString *url = [NSString stringWithFormat:panicUrl, token];
+    
+    ASIFormDataRequest *request = [self formRequestWithURL:url];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request setRequestMethod:@"POST"];
+    [request setDidFinishSelector:@selector(requestFinished:)];
+    [request setDidFailSelector:@selector(requestFailed:)];
+    [request startAsynchronous];
+}
+
+-(void) requestFinished:(ASIHTTPRequest *) request 
+{
+    [SVProgressHUD dismissWithSuccess:@"Enviado"];
+    [self clearFinishedRequests];
+}
+
+-(void) requestFailed:(ASIHTTPRequest *) request
+{
+    [SVProgressHUD dismissWithError:[[request error] localizedDescription]];
+    //TODO phone hack
+}
 @end
