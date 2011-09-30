@@ -95,45 +95,39 @@ static NSString *loginUrl = @"http://ntalk.dev/users/sign_in.json";
         emailValue = textField.text;
     } else if (textField.tag == 1) {
         passwordValue = textField.text;
-        NSDictionary *response = [self grabTokenInBackgroundWithEmail:emailValue andPassword:passwordValue];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"didGetAuthToken" object:nil userInfo:response];
-        
+        [self grabTokenInBackgroundWithEmail:emailValue andPassword:passwordValue];        
     }
     
     return NO;
 }
 
 #pragma mark - POST
--(NSDictionary *)grabTokenInBackgroundWithEmail:(NSString *)email andPassword:(NSString *)password
+-(void)grabTokenInBackgroundWithEmail:(NSString *)email andPassword:(NSString *)password
 {
+    [SVProgressHUD showInView:self.view];
+    
     ASIFormDataRequest *request = [self formRequestWithURL:loginUrl];
     [request setPostValue:email forKey:@"user[email]"];
     [request setPostValue:password forKey:@"user[password]"];
     [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request setDidFinishSelector:@selector(requestFinished:)];
+    [request setDidFailSelector:@selector(requestFailed:)];
     [request startAsynchronous];
-    NSError *error = [request error];
-    if (!error) {
-        if ([request responseStatusCode] == 201) {
-            return [[request responseString] objectFromJSONString];
-        }
-    } else {
-        switch (error.code) {
-            case NSURLErrorTimedOut:
-            case NSURLErrorNetworkConnectionLost:
-            case NSURLErrorNotConnectedToInternet:
-                NSLog(@"timeout");
-                break;
-            case NSURLErrorUserAuthenticationRequired:
-                NSLog(@"auth required");
-                break;
-            default:
-                NSLog(@"error code %i %@", error.code ,error);
-                break;
-        }
-    }
-    
-    return nil;
 }
-    
+
+-(void) requestFinished:(ASIHTTPRequest *) request 
+{
+    [SVProgressHUD dismissWithSuccess:@"Gracias"];
+    if ([request responseStatusCode] == 201) {
+        NSDictionary *response = [[request responseString] objectFromJSONString];
+        [self clearFinishedRequests];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"didGetAuthToken" object:nil userInfo:response];
+    }
+}
+
+-(void) requestFailed:(ASIHTTPRequest *) request
+{
+    [SVProgressHUD dismissWithError:[[request error] localizedDescription]];
+}
 
 @end

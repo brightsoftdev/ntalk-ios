@@ -9,16 +9,15 @@
 #import "WalktroughViewController.h"
 
 @implementation WalktroughViewController
-@synthesize scrollView = _scrollView, pageControl = _pageControl, 
-viewControllers = _viewControllers;
+@synthesize scrollView = _scrollView, pageControl = _pageControl;
 static NSUInteger kNumberOfPages = 4;
 
 -(void)dealloc
 {
     [_scrollView release];
     [_pageControl release];
-    //[_viewControllers release];
-    //TODO tengo un pedo de bad access aqui. Figure out WTF
+    _viewControllers = nil;
+    [_viewControllers release];
     [super dealloc];
 }
 
@@ -26,7 +25,6 @@ static NSUInteger kNumberOfPages = 4;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -42,8 +40,10 @@ static NSUInteger kNumberOfPages = 4;
 {
     [super viewDidLoad];
     
-    
-    self.viewControllers = [[NSMutableArray alloc] initWithCapacity:kNumberOfPages];    
+    _viewControllers = [[NSMutableArray alloc] initWithCapacity:kNumberOfPages];
+    for (int i = 0; i < kNumberOfPages; i++) {
+        [_viewControllers addObject:[NSNull null]];
+    }
     
     _scrollView.pagingEnabled = YES;
     _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * kNumberOfPages, _scrollView.frame.size.height);

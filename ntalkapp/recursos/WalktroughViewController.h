@@ -12,11 +12,11 @@
 
 @interface WalktroughViewController : UIViewController <UIScrollViewDelegate> {
     BOOL pageControlUsed;
+    NSMutableArray *_viewControllers;
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
 @property (nonatomic, retain) IBOutlet UIPageControl* pageControl;
-@property (nonatomic, retain) IBOutlet NSMutableArray *viewControllers;
 
 - (void) loadScrollViewWithPage:(int)page;
 - (IBAction)changePage:(id)sender;

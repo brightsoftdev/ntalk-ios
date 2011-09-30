@@ -10,6 +10,7 @@
 #import "ASIFormDataRequest.h"
 #import "JSONKit.h"
 #import "BaseViewController.h"
+#import "SVProgressHUD.h"
 
 @interface LoginViewController : BaseViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate> {
 
@@ -20,7 +21,7 @@
 @property (nonatomic, retain) NSString* emailValue;
 @property (nonatomic, retain) NSString* passwordValue;
 
-- (NSDictionary*) grabTokenInBackgroundWithEmail:(NSString *)email andPassword:(NSString*)password;
+-(void) grabTokenInBackgroundWithEmail:(NSString *)email andPassword:(NSString*)password;
 
 @end
 
