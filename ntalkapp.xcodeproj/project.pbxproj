@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		951CD8DE1434311E005DE354 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CD8DD1434311E005DE354 /* JSONKit.m */; };
+		951CD8E2143589E8005DE354 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CD8E1143589E8005DE354 /* BaseViewController.m */; };
+		951CD8F514358FBC005DE354 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 951CD8F214358FBC005DE354 /* SVProgressHUD.bundle */; };
+		951CD8F614358FBC005DE354 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CD8F414358FBC005DE354 /* SVProgressHUD.m */; };
+		951CD8F814358FFA005DE354 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951CD8F714358FF9005DE354 /* QuartzCore.framework */; };
 		9558F177142AF8DC00A76D67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F176142AF8DC00A76D67 /* UIKit.framework */; };
 		9558F179142AF8DC00A76D67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F178142AF8DC00A76D67 /* Foundation.framework */; };
 		9558F17B142AF8DC00A76D67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F17A142AF8DC00A76D67 /* CoreGraphics.framework */; };
@@ -47,6 +51,12 @@
 /* Begin PBXFileReference section */
 		951CD8DC1434311E005DE354 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		951CD8DD1434311E005DE354 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		951CD8E0143589E8005DE354 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		951CD8E1143589E8005DE354 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		951CD8F214358FBC005DE354 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		951CD8F314358FBC005DE354 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		951CD8F414358FBC005DE354 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		951CD8F714358FF9005DE354 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9558F172142AF8DC00A76D67 /* ntalkapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ntalkapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9558F176142AF8DC00A76D67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9558F178142AF8DC00A76D67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951CD8F814358FFA005DE354 /* QuartzCore.framework in Frameworks */,
 				9558F1DF142B053F00A76D67 /* libz.dylib in Frameworks */,
 				9558F1DD142B051F00A76D67 /* MobileCoreServices.framework in Frameworks */,
 				9558F1DB142B051600A76D67 /* SystemConfiguration.framework in Frameworks */,
@@ -131,9 +142,29 @@
 			path = JSONKit;
 			sourceTree = "<group>";
 		};
+		951CD8E3143589ED005DE354 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				951CD8E0143589E8005DE354 /* BaseViewController.h */,
+				951CD8E1143589E8005DE354 /* BaseViewController.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		951CD8EC14358D8B005DE354 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				951CD8F214358FBC005DE354 /* SVProgressHUD.bundle */,
+				951CD8F314358FBC005DE354 /* SVProgressHUD.h */,
+				951CD8F414358FBC005DE354 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		9558F167142AF8DB00A76D67 = {
 			isa = PBXGroup;
 			children = (
+				951CD8F714358FF9005DE354 /* QuartzCore.framework */,
 				9558F1DE142B053F00A76D67 /* libz.dylib */,
 				9558F1DC142B051F00A76D67 /* MobileCoreServices.framework */,
 				9558F1DA142B051600A76D67 /* SystemConfiguration.framework */,
@@ -170,6 +201,8 @@
 				9558F1BA142B022800A76D67 /* ASIHttpRequest */,
 				9558F1D4142B029600A76D67 /* Reachability */,
 				951CD8DB1434311E005DE354 /* JSONKit */,
+				951CD8E3143589ED005DE354 /* Helpers */,
+				951CD8EC14358D8B005DE354 /* SVProgressHUD */,
 				9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */,
 				9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */,
 				9558F188142AF8DC00A76D67 /* MainWindow.xib */,
@@ -317,6 +350,7 @@
 				9558F1B3142AFBFD00A76D67 /* button.png in Resources */,
 				9558F1B4142AFBFD00A76D67 /* contacts.png in Resources */,
 				9558F1B5142AFBFD00A76D67 /* gift.png in Resources */,
+				951CD8F514358FBC005DE354 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +377,8 @@
 				9558F1D3142B022800A76D67 /* ASIInputStream.m in Sources */,
 				9558F1D7142B029600A76D67 /* Reachability.m in Sources */,
 				951CD8DE1434311E005DE354 /* JSONKit.m in Sources */,
+				951CD8E2143589E8005DE354 /* BaseViewController.m in Sources */,
+				951CD8F614358FBC005DE354 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +460,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ntalkapp/ntalkapp-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "ntalkapp/ntalkapp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -436,7 +472,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ntalkapp/ntalkapp-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "ntalkapp/ntalkapp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

@@ -29,6 +29,7 @@
         [wvc release];
     } else {
         //TODO necesitamos algo? Aqui se supone que ya hay un token valido
+        NSLog(@"token: %@", token);
     }
     
     return YES;
@@ -74,10 +75,10 @@
 }
 
 - (void)didGetAuthenticationToken: (NSNotification*) n {
-    //TODO enviar info via asihttprequest    
-    NSLog(@"userinfo %@ %@", 
-          [n.userInfo objectForKey:@"email"], 
-          [n.userInfo objectForKey:@"password"]);
+    NSDictionary *d = [n userInfo];
+    NSString *token = [[d objectForKey:@"user"] objectForKey:@"authentication_token"];
+    [[NSUserDefaults standardUserDefaults] setValue:token forKey:@"authToken"];
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"didGetAuthToken" object:nil];
     [self.window.rootViewController dismissModalViewControllerAnimated:YES];
 }

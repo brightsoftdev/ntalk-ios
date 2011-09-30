@@ -17,7 +17,7 @@ static NSUInteger kNumberOfPages = 4;
 {
     [_scrollView release];
     [_pageControl release];
-    [_viewControllers release];
+    //[_viewControllers release];
     //TODO tengo un pedo de bad access aqui. Figure out WTF
     [super dealloc];
 }
@@ -43,13 +43,7 @@ static NSUInteger kNumberOfPages = 4;
     [super viewDidLoad];
     
     
-    NSMutableArray* controllers = [[NSMutableArray alloc] init];
-    for (unsigned int i = 0; i < kNumberOfPages; i++) {
-        [controllers addObject:[NSNull null]];
-    }
-    
-    self.viewControllers = controllers;
-    [controllers release];
+    self.viewControllers = [[NSMutableArray alloc] initWithCapacity:kNumberOfPages];    
     
     _scrollView.pagingEnabled = YES;
     _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * kNumberOfPages, _scrollView.frame.size.height);

@@ -7,15 +7,15 @@
 //
 
 #import "LoginViewController.h"
-#import "ASIFormDataRequest.h"
 
 @implementation LoginViewController
 @synthesize tableView = _tableView, loadCell = _loadCell;
 @synthesize emailValue, passwordValue;
+static NSString *loginUrl = @"http://ntalk.dev/users/sign_in.json";
 
 - (void)dealloc {
     [_tableView release];
-    
+//    [_loadCell release];
     [emailValue release];
     [passwordValue release];
     [super dealloc];
@@ -95,30 +95,27 @@
         emailValue = textField.text;
     } else if (textField.tag == 1) {
         passwordValue = textField.text;
-        NSString *response = [self grabTokenInBackgroundWithEmail:emailValue andPassword:passwordValue];
-        NSLog(@"%@", response);
+        NSDictionary *response = [self grabTokenInBackgroundWithEmail:emailValue andPassword:passwordValue];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"didGetAuthToken" object:nil userInfo:response];
         
-//        NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:
-//                               emailValue, @"email",
-//                               passwordValue, @"password",
-//                              nil];
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"didGetAuthToken" object:nil userInfo:dict];
     }
     
     return NO;
 }
 
 #pragma mark - POST
--(NSString *)grabTokenInBackgroundWithEmail:(NSString *)email andPassword:(NSString *)password
+-(NSDictionary *)grabTokenInBackgroundWithEmail:(NSString *)email andPassword:(NSString *)password
 {
-    NSString *url = @"http://ntalk.dev/users/sign_in.json";
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
-        [request setPostValue:email forKey:@"user[email]"];
+    ASIFormDataRequest *request = [self formRequestWithURL:loginUrl];
+    [request setPostValue:email forKey:@"user[email]"];
     [request setPostValue:password forKey:@"user[password]"];
-    [request startSynchronous];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request startAsynchronous];
     NSError *error = [request error];
     if (!error) {
-        return [NSString stringWithFormat:@"%d: %@", [request responseStatusCode], [request responseString]];
+        if ([request responseStatusCode] == 201) {
+            return [[request responseString] objectFromJSONString];
+        }
     } else {
         switch (error.code) {
             case NSURLErrorTimedOut:
@@ -133,8 +130,9 @@
                 NSLog(@"error code %i %@", error.code ,error);
                 break;
         }
-        return nil;
     }
+    
+    return nil;
 }
     
 

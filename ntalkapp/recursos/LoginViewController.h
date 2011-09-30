@@ -7,16 +7,12 @@
 //
 
 #import "TextEditCell.h"
+#import "ASIFormDataRequest.h"
+#import "JSONKit.h"
+#import "BaseViewController.h"
 
-// TODO: Esto iria mejor en otro lado?
-@protocol LoginDelegate <NSObject>
+@interface LoginViewController : BaseViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate> {
 
--(void) didGetAuthenticationToken;
-
-@end
-
-@interface LoginViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate> {
-    
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
@@ -24,7 +20,7 @@
 @property (nonatomic, retain) NSString* emailValue;
 @property (nonatomic, retain) NSString* passwordValue;
 
-- (NSString*) grabTokenInBackgroundWithEmail:(NSString *)email andPassword:(NSString*)password;
+- (NSDictionary*) grabTokenInBackgroundWithEmail:(NSString *)email andPassword:(NSString*)password;
 
 @end
 
