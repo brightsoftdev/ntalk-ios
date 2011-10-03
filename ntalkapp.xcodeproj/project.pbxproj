@@ -12,6 +12,7 @@
 		951CD8F514358FBC005DE354 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 951CD8F214358FBC005DE354 /* SVProgressHUD.bundle */; };
 		951CD8F614358FBC005DE354 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CD8F414358FBC005DE354 /* SVProgressHUD.m */; };
 		951CD8F814358FFA005DE354 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951CD8F714358FF9005DE354 /* QuartzCore.framework */; };
+		951CD8FA1435AAB6005DE354 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951CD8F91435AAB6005DE354 /* CoreLocation.framework */; };
 		9558F177142AF8DC00A76D67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F176142AF8DC00A76D67 /* UIKit.framework */; };
 		9558F179142AF8DC00A76D67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F178142AF8DC00A76D67 /* Foundation.framework */; };
 		9558F17B142AF8DC00A76D67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F17A142AF8DC00A76D67 /* CoreGraphics.framework */; };
@@ -57,6 +58,7 @@
 		951CD8F314358FBC005DE354 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		951CD8F414358FBC005DE354 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		951CD8F714358FF9005DE354 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		951CD8F91435AAB6005DE354 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9558F172142AF8DC00A76D67 /* ntalkapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ntalkapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9558F176142AF8DC00A76D67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9558F178142AF8DC00A76D67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,6 +114,7 @@
 		9558F1DA142B051600A76D67 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9558F1DC142B051F00A76D67 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9558F1DE142B053F00A76D67 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		95C7800F14393CDD001F8701 /* CoreLocationSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreLocationSimulator.h; path = ../CoreLocationSimulator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951CD8FA1435AAB6005DE354 /* CoreLocation.framework in Frameworks */,
 				951CD8F814358FFA005DE354 /* QuartzCore.framework in Frameworks */,
 				9558F1DF142B053F00A76D67 /* libz.dylib in Frameworks */,
 				9558F1DD142B051F00A76D67 /* MobileCoreServices.framework in Frameworks */,
@@ -164,6 +168,7 @@
 		9558F167142AF8DB00A76D67 = {
 			isa = PBXGroup;
 			children = (
+				951CD8F91435AAB6005DE354 /* CoreLocation.framework */,
 				951CD8F714358FF9005DE354 /* QuartzCore.framework */,
 				9558F1DE142B053F00A76D67 /* libz.dylib */,
 				9558F1DC142B051F00A76D67 /* MobileCoreServices.framework */,
@@ -205,6 +210,7 @@
 				951CD8EC14358D8B005DE354 /* SVProgressHUD */,
 				9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */,
 				9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */,
+				95C7800F14393CDD001F8701 /* CoreLocationSimulator.h */,
 				9558F188142AF8DC00A76D67 /* MainWindow.xib */,
 				9558F18B142AF8DC00A76D67 /* RootViewController.h */,
 				9558F18C142AF8DC00A76D67 /* RootViewController.m */,
@@ -316,6 +322,9 @@
 /* Begin PBXProject section */
 		9558F169142AF8DB00A76D67 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "N-talk";
+			};
 			buildConfigurationList = 9558F16C142AF8DB00A76D67 /* Build configuration list for PBXProject "ntalkapp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;

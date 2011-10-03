@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "BaseViewController.h"
 #import "SVProgressHUD.h"
+#import "CoreLocationSimulator.h"
 
-@interface RootViewController : BaseViewController {
+@interface RootViewController : BaseViewController <CLLocationManagerDelegate> {
     double lat;
     double lng;
 }
 
+@property (nonatomic, retain) IBOutlet UIButton *panicButton;
+@property (nonatomic, retain) CLLocationManager *locman;
 
 - (void) showPreferences;
 - (IBAction)didTouchPanicButton:(id)sender;
