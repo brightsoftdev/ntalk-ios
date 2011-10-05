@@ -30,6 +30,8 @@ static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json?auth_token=%@"
     self.navigationItem.leftBarButtonItem = b;
     [b release];
     
+    self.title = @"";
+    
     BOOL ok = [CLLocationManager locationServicesEnabled];
     if (!ok) {
         [SVProgressHUD dismissWithError:@"Oh, well"];
@@ -63,14 +65,6 @@ static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json?auth_token=%@"
 	[super viewDidDisappear:animated];
 }
 
-/*
- // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
- */
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -90,6 +84,10 @@ static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json?auth_token=%@"
 -(void)showPreferences
 {
     DebugLog(@"show preferences");
+    UIViewController *vc = [[PreferencesViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    [vc release];
 }
 
 #pragma mark - CoreLocation

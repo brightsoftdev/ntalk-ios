@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "ntalkappAppDelegate.h"
 #import "BaseViewController.h"
 #import "SVProgressHUD.h"
 #import "CoreLocationSimulator.h"
+#import "PreferencesViewController.h"
 
 @interface RootViewController : BaseViewController <CLLocationManagerDelegate> {
     double lat;

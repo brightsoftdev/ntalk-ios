@@ -47,6 +47,13 @@
 		9558F1DB142B051600A76D67 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F1DA142B051600A76D67 /* SystemConfiguration.framework */; };
 		9558F1DD142B051F00A76D67 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F1DC142B051F00A76D67 /* MobileCoreServices.framework */; };
 		9558F1DF142B053F00A76D67 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558F1DE142B053F00A76D67 /* libz.dylib */; };
+		956F6C4F143C0C8700E21B54 /* AsyncCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 956F6C4E143C0C8700E21B54 /* AsyncCell.m */; };
+		956F6C53143C0CA700E21B54 /* FastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 956F6C52143C0CA700E21B54 /* FastCell.m */; };
+		956F6C56143C0CD600E21B54 /* DictionaryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 956F6C55143C0CD600E21B54 /* DictionaryHelper.m */; };
+		9582201F143954A500FA918A /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9582201D143954A500FA918A /* PreferencesViewController.m */; };
+		95822020143954A500FA918A /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9582201E143954A500FA918A /* PreferencesViewController.xib */; };
+		959786A71439662F000CF7C7 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 959786A51439662F000CF7C7 /* ContactsViewController.m */; };
+		959786A81439662F000CF7C7 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 959786A61439662F000CF7C7 /* ContactsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +121,18 @@
 		9558F1DA142B051600A76D67 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9558F1DC142B051F00A76D67 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9558F1DE142B053F00A76D67 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		956F6C4D143C0C8700E21B54 /* AsyncCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncCell.h; sourceTree = "<group>"; };
+		956F6C4E143C0C8700E21B54 /* AsyncCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncCell.m; sourceTree = "<group>"; };
+		956F6C51143C0CA700E21B54 /* FastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastCell.h; sourceTree = "<group>"; };
+		956F6C52143C0CA700E21B54 /* FastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastCell.m; sourceTree = "<group>"; };
+		956F6C54143C0CD600E21B54 /* DictionaryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryHelper.h; sourceTree = "<group>"; };
+		956F6C55143C0CD600E21B54 /* DictionaryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryHelper.m; sourceTree = "<group>"; };
+		9582201C143954A500FA918A /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferencesViewController.h; path = SVProgressHUD/PreferencesViewController.h; sourceTree = "<group>"; };
+		9582201D143954A500FA918A /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferencesViewController.m; path = SVProgressHUD/PreferencesViewController.m; sourceTree = "<group>"; };
+		9582201E143954A500FA918A /* PreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesViewController.xib; path = SVProgressHUD/PreferencesViewController.xib; sourceTree = "<group>"; };
+		959786A41439662F000CF7C7 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		959786A51439662F000CF7C7 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		959786A61439662F000CF7C7 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
 		95C7800F14393CDD001F8701 /* CoreLocationSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreLocationSimulator.h; path = ../CoreLocationSimulator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,8 +168,12 @@
 		951CD8E3143589ED005DE354 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				956F6C51143C0CA700E21B54 /* FastCell.h */,
+				956F6C52143C0CA700E21B54 /* FastCell.m */,
 				951CD8E0143589E8005DE354 /* BaseViewController.h */,
 				951CD8E1143589E8005DE354 /* BaseViewController.m */,
+				956F6C54143C0CD600E21B54 /* DictionaryHelper.h */,
+				956F6C55143C0CD600E21B54 /* DictionaryHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -208,6 +231,7 @@
 				951CD8DB1434311E005DE354 /* JSONKit */,
 				951CD8E3143589ED005DE354 /* Helpers */,
 				951CD8EC14358D8B005DE354 /* SVProgressHUD */,
+				95822021143954B100FA918A /* Preferences */,
 				9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */,
 				9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */,
 				95C7800F14393CDD001F8701 /* CoreLocationSimulator.h */,
@@ -297,6 +321,21 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		95822021143954B100FA918A /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				9582201C143954A500FA918A /* PreferencesViewController.h */,
+				9582201D143954A500FA918A /* PreferencesViewController.m */,
+				9582201E143954A500FA918A /* PreferencesViewController.xib */,
+				956F6C4D143C0C8700E21B54 /* AsyncCell.h */,
+				956F6C4E143C0C8700E21B54 /* AsyncCell.m */,
+				959786A41439662F000CF7C7 /* ContactsViewController.h */,
+				959786A51439662F000CF7C7 /* ContactsViewController.m */,
+				959786A61439662F000CF7C7 /* ContactsViewController.xib */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -360,6 +399,8 @@
 				9558F1B4142AFBFD00A76D67 /* contacts.png in Resources */,
 				9558F1B5142AFBFD00A76D67 /* gift.png in Resources */,
 				951CD8F514358FBC005DE354 /* SVProgressHUD.bundle in Resources */,
+				95822020143954A500FA918A /* PreferencesViewController.xib in Resources */,
+				959786A81439662F000CF7C7 /* ContactsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +429,11 @@
 				951CD8DE1434311E005DE354 /* JSONKit.m in Sources */,
 				951CD8E2143589E8005DE354 /* BaseViewController.m in Sources */,
 				951CD8F614358FBC005DE354 /* SVProgressHUD.m in Sources */,
+				9582201F143954A500FA918A /* PreferencesViewController.m in Sources */,
+				959786A71439662F000CF7C7 /* ContactsViewController.m in Sources */,
+				956F6C4F143C0C8700E21B54 /* AsyncCell.m in Sources */,
+				956F6C53143C0CA700E21B54 /* FastCell.m in Sources */,
+				956F6C56143C0CD600E21B54 /* DictionaryHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
