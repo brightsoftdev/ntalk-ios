@@ -76,15 +76,15 @@ static UIFont* bold14 = nil;
 	CGFloat widthr = self.frame.size.width - 70;
 	
 	[[UIColor blackColor] set];
-	[name drawInRect:CGRectMake(63.0, 5.0, widthr, 20.0) withFont:bold14 lineBreakMode:UILineBreakModeTailTruncation];
+	[name drawInRect:CGRectMake(5.0, 5.0, widthr, 20.0) withFont:bold14 lineBreakMode:UILineBreakModeTailTruncation];
 	[[UIColor grayColor] set];
-	[text drawInRect:CGRectMake(63.0, 25.0, widthr, 20.0) withFont:system14 lineBreakMode:UILineBreakModeTailTruncation];
+	[text drawInRect:CGRectMake(5.0, 25.0, widthr, 20.0) withFont:system14 lineBreakMode:UILineBreakModeTailTruncation];
 
 }
 
 - (void) updateCellInfo:(NSDictionary*)_contact {
 	self.contact = [_contact objectForKey:@"contact"];
-    NSLog(@"contact %@", self.contact);
+    DebugLog(@"contact %@", self.contact);
     
 	[self setNeedsDisplay];
 }
