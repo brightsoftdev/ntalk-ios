@@ -26,23 +26,48 @@
 //  
 
 #import "BaseViewController.h"
-//#import "IOSBoilerplateAppDelegate.h"
+
+@interface BaseViewController () 
+- (NSString*) appendTokenToURL:(NSString*)baseUrl;
+@end
 
 @implementation BaseViewController
 
-#pragma mark -
-#pragma mark HTTP requests
+#pragma mark - HTTP requests
 
 - (ASIHTTPRequest*) requestWithURL:(NSString*) s {
+    DebugLog(@"haciendo peticion a %@", s);
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:s]];
 	[self addRequest:request];
 	return request;
 }
 
+- (ASIHTTPRequest*) requestWithURL:(NSString*) s tokenIncluded:(BOOL)token {
+    if (token) {
+        s = [self appendTokenToURL:s];
+    }
+    return [self requestWithURL:s];
+}
+
 - (ASIFormDataRequest*) formRequestWithURL:(NSString*) s {
+    DebugLog(@"haciendo peticion a %@", s);
 	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:s]];
 	[self addRequest:request];
 	return request;
+}
+
+- (ASIFormDataRequest*) formRequestWithURL:(NSString*) s tokenIncluded:(BOOL)token {
+    if (token) {
+        s = [self appendTokenToURL:s];
+    }
+    return [self formRequestWithURL:s];
+}
+
+- (NSString*) appendTokenToURL:(NSString*)baseUrl {
+    NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
+    NSString *url = [baseUrl stringByAppendingString:@"?auth_token=%@"];
+    url = [NSString stringWithFormat:url, token];
+    return url;
 }
 
 - (void) addRequest:(ASIHTTPRequest*)request {
@@ -92,8 +117,7 @@
     [cells release];
 }
 
-#pragma mark -
-#pragma mark UIViewController
+#pragma mark - UIViewController
 
 - (void) viewDidLoad {
 	[super viewDidLoad];
@@ -103,8 +127,7 @@
 	[super viewDidUnload];
 }
 
-#pragma mark -
-#pragma mark Memory management
+#pragma mark - Memory management
 
 - (void)dealloc {
 	[self cancelRequests];

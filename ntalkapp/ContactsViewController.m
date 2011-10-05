@@ -11,7 +11,7 @@
 @implementation ContactsViewController
 @synthesize table = _table, contacts = _contacts;
 
-static NSString *contactsUrl = @"http://ntalk.dev/api/v1/contacts.json?auth_token=%@";
+static NSString *contactsUrl = @"http://ntalk.dev/api/v1/contacts.json";
 
 - (void)dealloc
 {
@@ -46,12 +46,8 @@ static NSString *contactsUrl = @"http://ntalk.dev/api/v1/contacts.json?auth_toke
     
     [SVProgressHUD showInView:self.view];
     
-    NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
-    NSString *url = [NSString stringWithFormat:contactsUrl, token];
-    DebugLog(@"haciendo peticion a %@", url);
-
     //TODO decidir si cachear esta peticion
-    ASIHTTPRequest* request = [self requestWithURL:url];
+    ASIHTTPRequest* request = [self requestWithURL:contactsUrl tokenIncluded:YES];
     [request setDidFinishSelector:@selector(requestFinished:)];
     [request setDidFailSelector:@selector(requestFailed:)];
     [request startAsynchronous];
@@ -110,7 +106,6 @@ static NSString *contactsUrl = @"http://ntalk.dev/api/v1/contacts.json?auth_toke
 {
     [SVProgressHUD dismiss];
     
-    DebugLog(@"respuesta %@", [request responseString]);
     self.contacts = [[request responseString] objectFromJSONString];
     [_table reloadData];
     

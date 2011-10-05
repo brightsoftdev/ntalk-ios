@@ -37,7 +37,9 @@
 }
 
 - (ASIHTTPRequest*) requestWithURL:(NSString*) s;
+- (ASIHTTPRequest*) requestWithURL:(NSString*) s tokenIncluded:(BOOL) token;
 - (ASIFormDataRequest*) formRequestWithURL:(NSString*) s;
+- (ASIFormDataRequest*) formRequestWithURL:(NSString*) s tokenIncluded:(BOOL) token;
 - (void) addRequest:(ASIHTTPRequest*)request;
 - (void) clearFinishedRequests;
 - (void) cancelRequests;

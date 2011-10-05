@@ -84,7 +84,6 @@ static UIFont* bold14 = nil;
 
 - (void) updateCellInfo:(NSDictionary*)_contact {
 	self.contact = [_contact objectForKey:@"contact"];
-    DebugLog(@"contact %@", self.contact);
     
 	[self setNeedsDisplay];
 }

@@ -105,10 +105,8 @@ static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json?auth_token=%@"
 - (void)didTouchPanicButton:(id)sender
 {
     [SVProgressHUD showInView:self.view];
-    NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
-    NSString *url = [NSString stringWithFormat:panicUrl, token];
-    
-    ASIFormDataRequest *request = [self formRequestWithURL:url];
+
+    ASIFormDataRequest *request = [self formRequestWithURL:panicUrl tokenIncluded:YES];
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"POST"];
     if (lat != 0.0) {
