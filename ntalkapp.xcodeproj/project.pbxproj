@@ -199,6 +199,21 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		954EDAF41441A12C00A04CFA /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				956F6C57143C261C00E21B54 /* ContactDetailsViewController.h */,
+				956F6C58143C261C00E21B54 /* ContactDetailsViewController.m */,
+				956F6C59143C261C00E21B54 /* ContactDetailsViewController.xib */,
+				956F6C4D143C0C8700E21B54 /* AsyncCell.h */,
+				956F6C4E143C0C8700E21B54 /* AsyncCell.m */,
+				959786A41439662F000CF7C7 /* ContactsViewController.h */,
+				959786A51439662F000CF7C7 /* ContactsViewController.m */,
+				959786A61439662F000CF7C7 /* ContactsViewController.xib */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
 		9558F167142AF8DB00A76D67 = {
 			isa = PBXGroup;
 			children = (
@@ -243,8 +258,9 @@
 				951CD8E3143589ED005DE354 /* Helpers */,
 				951CD8EC14358D8B005DE354 /* SVProgressHUD */,
 				95822021143954B100FA918A /* Preferences */,
-				9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */,
+				954EDAF41441A12C00A04CFA /* Contacts */,
 				9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */,
+				9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */,
 				95C7800F14393CDD001F8701 /* CoreLocationSimulator.h */,
 				9558F188142AF8DC00A76D67 /* MainWindow.xib */,
 				9558F18B142AF8DC00A76D67 /* RootViewController.h */,
@@ -338,17 +354,9 @@
 		95822021143954B100FA918A /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				956F6C57143C261C00E21B54 /* ContactDetailsViewController.h */,
-				956F6C58143C261C00E21B54 /* ContactDetailsViewController.m */,
-				956F6C59143C261C00E21B54 /* ContactDetailsViewController.xib */,
 				9582201C143954A500FA918A /* PreferencesViewController.h */,
 				9582201D143954A500FA918A /* PreferencesViewController.m */,
 				9582201E143954A500FA918A /* PreferencesViewController.xib */,
-				956F6C4D143C0C8700E21B54 /* AsyncCell.h */,
-				956F6C4E143C0C8700E21B54 /* AsyncCell.m */,
-				959786A41439662F000CF7C7 /* ContactsViewController.h */,
-				959786A51439662F000CF7C7 /* ContactsViewController.m */,
-				959786A61439662F000CF7C7 /* ContactsViewController.xib */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";

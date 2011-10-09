@@ -36,10 +36,6 @@
 	
 	NSMutableArray *tmp = [NSMutableArray array];
 	
-	rows = [NSArray arrayWithObjects:@"Contactos", nil];
-	d = [NSDictionary dictionaryWithObjectsAndKeys:rows,@"rows",@"Contactos",@"title",nil];
-	[tmp addObject:d];
-	
 	rows = [NSArray arrayWithObjects:@"Contraseña", nil];
 	d = [NSDictionary dictionaryWithObjectsAndKeys:rows,@"rows",@"Seguridad",@"title",nil];
 	[tmp addObject:d];
@@ -102,10 +98,6 @@
     int r = indexPath.row;
     
     if (0 == s) {
-        if (0 == r) {
-            vc = [[ContactsViewController alloc] init];
-        }
-    } else if (1 == s) {
         if (0 == r) {
             vc = [[UIViewController alloc] init];
         }
