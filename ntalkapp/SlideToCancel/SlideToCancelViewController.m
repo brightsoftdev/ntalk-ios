@@ -97,7 +97,7 @@ static const int animationFramesPerSec = 8;
 	// Create the label with the actual size required by the text
 	// If you change the text, font, or font size by using the "label" property,
 	// you may need to recalculate the label's frame.
-	NSString *labelText = NSLocalizedString(@"alerta!", @"SlideToCancel label");
+	NSString *labelText = NSLocalizedString(@"¡Alerta!", @"SlideToCancel label");
 	UIFont *labelFont = [UIFont systemFontOfSize:24];
 	CGSize labelSize = [labelText sizeWithFont:labelFont];
 	label = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, labelSize.width, labelSize.height)];

@@ -92,14 +92,14 @@ static NSString *contactsUrl = @"http://ntalk.dev/api/v1/contacts.json";
     if (! isNewContact) return;
     if (![sender isKindOfClass:[UITextField class]]) return;
     
-    if (emailTextField.text != @"" && 
-        nameTextField.text != @"" && 
+    if (! [emailTextField.text isEqualToString:@""]  && 
+        ! [nameTextField.text isEqualToString:@""] && 
         self.navigationItem.rightBarButtonItem.enabled == NO) {
         
         self.navigationItem.rightBarButtonItem.enabled = YES;
         
-    } else if ((emailTextField.text == @"" || 
-               nameTextField.text == @"") &&
+    } else if (([emailTextField.text isEqualToString:@""] || 
+                [nameTextField.text  isEqualToString:@""]) &&
                self.navigationItem.rightBarButtonItem.enabled == YES) {
         
         self.navigationItem.rightBarButtonItem.enabled = NO;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95183752144238DA00AB09C2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95183751144238DA00AB09C2 /* AudioToolbox.framework */; };
 		951CD8DE1434311E005DE354 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CD8DD1434311E005DE354 /* JSONKit.m */; };
 		951CD8E2143589E8005DE354 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CD8E1143589E8005DE354 /* BaseViewController.m */; };
 		951CD8F514358FBC005DE354 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 951CD8F214358FBC005DE354 /* SVProgressHUD.bundle */; };
@@ -66,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95183751144238DA00AB09C2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		951CD8DC1434311E005DE354 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		951CD8DD1434311E005DE354 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		951CD8E0143589E8005DE354 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -77,9 +79,9 @@
 		951CD8F91435AAB6005DE354 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		954EDB011441B10F00A04CFA /* SlideToCancelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideToCancelViewController.h; sourceTree = "<group>"; };
 		954EDB021441B10F00A04CFA /* SlideToCancelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideToCancelViewController.m; sourceTree = "<group>"; };
-		954EDB041441B14300A04CFA /* sliderMaxMin-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliderMaxMin-02.png"; sourceTree = "<group>"; };
-		954EDB051441B14300A04CFA /* sliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sliderThumb.png; sourceTree = "<group>"; };
-		954EDB061441B14300A04CFA /* sliderTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sliderTrack.png; sourceTree = "<group>"; };
+		954EDB041441B14300A04CFA /* sliderMaxMin-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sliderMaxMin-02.png"; path = "../Resources/sliderMaxMin-02.png"; sourceTree = "<group>"; };
+		954EDB051441B14300A04CFA /* sliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sliderThumb.png; path = ../Resources/sliderThumb.png; sourceTree = "<group>"; };
+		954EDB061441B14300A04CFA /* sliderTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sliderTrack.png; path = ../Resources/sliderTrack.png; sourceTree = "<group>"; };
 		9558F172142AF8DC00A76D67 /* ntalkapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ntalkapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9558F176142AF8DC00A76D67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9558F178142AF8DC00A76D67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -161,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95183752144238DA00AB09C2 /* AudioToolbox.framework in Frameworks */,
 				951CD8FA1435AAB6005DE354 /* CoreLocation.framework in Frameworks */,
 				951CD8F814358FFA005DE354 /* QuartzCore.framework in Frameworks */,
 				9558F1DF142B053F00A76D67 /* libz.dylib in Frameworks */,
@@ -227,6 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				954EDB011441B10F00A04CFA /* SlideToCancelViewController.h */,
+				954EDB041441B14300A04CFA /* sliderMaxMin-02.png */,
+				954EDB051441B14300A04CFA /* sliderThumb.png */,
+				954EDB061441B14300A04CFA /* sliderTrack.png */,
 				954EDB021441B10F00A04CFA /* SlideToCancelViewController.m */,
 			);
 			path = SlideToCancel;
@@ -235,12 +241,6 @@
 		9558F167142AF8DB00A76D67 = {
 			isa = PBXGroup;
 			children = (
-				951CD8F91435AAB6005DE354 /* CoreLocation.framework */,
-				951CD8F714358FF9005DE354 /* QuartzCore.framework */,
-				9558F1DE142B053F00A76D67 /* libz.dylib */,
-				9558F1DC142B051F00A76D67 /* MobileCoreServices.framework */,
-				9558F1DA142B051600A76D67 /* SystemConfiguration.framework */,
-				9558F1D8142B050D00A76D67 /* CFNetwork.framework */,
 				9558F17C142AF8DC00A76D67 /* ntalkapp */,
 				9558F175142AF8DC00A76D67 /* Frameworks */,
 				9558F173142AF8DC00A76D67 /* Products */,
@@ -258,6 +258,13 @@
 		9558F175142AF8DC00A76D67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95183751144238DA00AB09C2 /* AudioToolbox.framework */,
+				951CD8F91435AAB6005DE354 /* CoreLocation.framework */,
+				951CD8F714358FF9005DE354 /* QuartzCore.framework */,
+				9558F1DE142B053F00A76D67 /* libz.dylib */,
+				9558F1DC142B051F00A76D67 /* MobileCoreServices.framework */,
+				9558F1DA142B051600A76D67 /* SystemConfiguration.framework */,
+				9558F1D8142B050D00A76D67 /* CFNetwork.framework */,
 				9558F176142AF8DC00A76D67 /* UIKit.framework */,
 				9558F178142AF8DC00A76D67 /* Foundation.framework */,
 				9558F17A142AF8DC00A76D67 /* CoreGraphics.framework */,
@@ -328,9 +335,6 @@
 			children = (
 				9558F1B0142AFBFC00A76D67 /* button.png */,
 				95D97FD014418BB900D5BA5A /* 184-warning.png */,
-				954EDB041441B14300A04CFA /* sliderMaxMin-02.png */,
-				954EDB051441B14300A04CFA /* sliderThumb.png */,
-				954EDB061441B14300A04CFA /* sliderTrack.png */,
 				95D97FD514418C8400D5BA5A /* 123-id-card.png */,
 				95D97FD314418BC900D5BA5A /* 112-group.png */,
 				9558F1B1142AFBFC00A76D67 /* contacts.png */,
