@@ -50,6 +50,8 @@
 		956F6C4F143C0C8700E21B54 /* AsyncCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 956F6C4E143C0C8700E21B54 /* AsyncCell.m */; };
 		956F6C53143C0CA700E21B54 /* FastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 956F6C52143C0CA700E21B54 /* FastCell.m */; };
 		956F6C56143C0CD600E21B54 /* DictionaryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 956F6C55143C0CD600E21B54 /* DictionaryHelper.m */; };
+		956F6C5A143C261C00E21B54 /* ContactDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956F6C58143C261C00E21B54 /* ContactDetailsViewController.m */; };
+		956F6C5B143C261C00E21B54 /* ContactDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956F6C59143C261C00E21B54 /* ContactDetailsViewController.xib */; };
 		9582201F143954A500FA918A /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9582201D143954A500FA918A /* PreferencesViewController.m */; };
 		95822020143954A500FA918A /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9582201E143954A500FA918A /* PreferencesViewController.xib */; };
 		959786A71439662F000CF7C7 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 959786A51439662F000CF7C7 /* ContactsViewController.m */; };
@@ -127,6 +129,9 @@
 		956F6C52143C0CA700E21B54 /* FastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastCell.m; sourceTree = "<group>"; };
 		956F6C54143C0CD600E21B54 /* DictionaryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryHelper.h; sourceTree = "<group>"; };
 		956F6C55143C0CD600E21B54 /* DictionaryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryHelper.m; sourceTree = "<group>"; };
+		956F6C57143C261C00E21B54 /* ContactDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailsViewController.h; sourceTree = "<group>"; };
+		956F6C58143C261C00E21B54 /* ContactDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailsViewController.m; sourceTree = "<group>"; };
+		956F6C59143C261C00E21B54 /* ContactDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactDetailsViewController.xib; sourceTree = "<group>"; };
 		9582201C143954A500FA918A /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferencesViewController.h; path = SVProgressHUD/PreferencesViewController.h; sourceTree = "<group>"; };
 		9582201D143954A500FA918A /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferencesViewController.m; path = SVProgressHUD/PreferencesViewController.m; sourceTree = "<group>"; };
 		9582201E143954A500FA918A /* PreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesViewController.xib; path = SVProgressHUD/PreferencesViewController.xib; sourceTree = "<group>"; };
@@ -324,6 +329,9 @@
 		95822021143954B100FA918A /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				956F6C57143C261C00E21B54 /* ContactDetailsViewController.h */,
+				956F6C58143C261C00E21B54 /* ContactDetailsViewController.m */,
+				956F6C59143C261C00E21B54 /* ContactDetailsViewController.xib */,
 				9582201C143954A500FA918A /* PreferencesViewController.h */,
 				9582201D143954A500FA918A /* PreferencesViewController.m */,
 				9582201E143954A500FA918A /* PreferencesViewController.xib */,
@@ -401,6 +409,7 @@
 				951CD8F514358FBC005DE354 /* SVProgressHUD.bundle in Resources */,
 				95822020143954A500FA918A /* PreferencesViewController.xib in Resources */,
 				959786A81439662F000CF7C7 /* ContactsViewController.xib in Resources */,
+				956F6C5B143C261C00E21B54 /* ContactDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +443,7 @@
 				956F6C4F143C0C8700E21B54 /* AsyncCell.m in Sources */,
 				956F6C53143C0CA700E21B54 /* FastCell.m in Sources */,
 				956F6C56143C0CD600E21B54 /* DictionaryHelper.m in Sources */,
+				956F6C5A143C261C00E21B54 /* ContactDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,7 +525,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ntalkapp/ntalkapp-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ntalkapp/ntalkapp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -527,7 +537,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ntalkapp/ntalkapp-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ntalkapp/ntalkapp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

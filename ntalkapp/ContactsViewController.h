@@ -11,6 +11,7 @@
 #import "SVProgressHUD.h"
 #import "JSONKit.h"
 #import "AsyncCell.h"
+#import "ContactDetailsViewController.h"
 
 @interface ContactsViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate>
 

@@ -12,6 +12,7 @@
 @synthesize table = _table, contacts = _contacts;
 
 static NSString *contactsUrl = @"http://ntalk.dev/api/v1/contacts.json";
+static int maxContacts = 10;
 
 - (void)dealloc
 {
@@ -84,20 +85,30 @@ static NSString *contactsUrl = @"http://ntalk.dev/api/v1/contacts.json";
 -(void)didTouchAddContactButton:(id)sender
 {
     DebugLog(@"agregado contacto");
+    if ([_contacts count] < maxContacts) {
+        ContactDetailsViewController *detailViewController = [[ContactDetailsViewController alloc] initWithContact:[NSDictionary dictionary]];
+        
+        [self.navigationController pushViewController:detailViewController animated:YES];
+        [detailViewController release];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] init];
+        alert.title = @"Demasiados Contactos";
+        alert.message = @"Haz alcanzado el límite de contactos\nBorra algunos";
+        [alert show];
+    }
 }
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    AsyncCell *cell = (AsyncCell *)[self tableView:_table cellForRowAtIndexPath:indexPath];
+    
+    ContactDetailsViewController *detailViewController = [[ContactDetailsViewController alloc] initWithContact:[cell contact]];
+
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+
 }
 
 #pragma mark - Async HTTP
