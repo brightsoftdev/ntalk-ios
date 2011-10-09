@@ -12,16 +12,16 @@
 #import "BaseViewController.h"
 #import "SVProgressHUD.h"
 #import "CoreLocationSimulator.h"
-#import "PreferencesViewController.h"
+#import "SlideToCancelViewController.h"
 
-@interface RootViewController : BaseViewController <CLLocationManagerDelegate> {
+@interface RootViewController : BaseViewController <CLLocationManagerDelegate, SlideToAlertDelegate> {
     double lat;
     double lng;
+    SlideToCancelViewController* slideToCancel;
 }
 
-@property (nonatomic, retain) IBOutlet UIButton *panicButton;
 @property (nonatomic, retain) CLLocationManager *locman;
 
-- (IBAction)didTouchPanicButton:(id)sender;
+- (void)alerted;
 
 @end

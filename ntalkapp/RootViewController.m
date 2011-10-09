@@ -9,12 +9,11 @@
 #import "RootViewController.h"
 
 @implementation RootViewController
-@synthesize panicButton, locman;
-static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json?auth_token=%@";
+@synthesize locman;
+static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json";
 
 - (void)dealloc
 { 
-    [panicButton release];
     [locman release];
     [super dealloc];
 }
@@ -23,13 +22,27 @@ static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json?auth_token=%@"
 {
     [super viewDidLoad];
     
+    if (!slideToCancel) {
+		// Create the slider
+		slideToCancel = [[SlideToCancelViewController alloc] init];
+		slideToCancel.delegate = self;
+		
+		// Position the slider off the bottom of the view, so we can slide it up
+		CGRect sliderFrame = slideToCancel.view.frame;
+		sliderFrame.origin.y = 100.0f;
+		slideToCancel.view.frame = sliderFrame;
+		
+		// Add slider to the view
+		[self.view addSubview:slideToCancel.view];
+	}
+    
     [SVProgressHUD showInView:self.view status:@"localizando"];
-    [panicButton setEnabled:NO];
+    slideToCancel.enabled = NO;
     
     BOOL ok = [CLLocationManager locationServicesEnabled];
     if (!ok) {
         [SVProgressHUD dismissWithError:@"Oh, well"];
-        [panicButton setEnabled:YES];
+        slideToCancel.enabled = YES;
     }
     
     CLLocationManager *lm = [[CLLocationManager alloc] init];
@@ -37,6 +50,7 @@ static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json?auth_token=%@"
     [lm release];
     self.locman.delegate = self;
     [self.locman startUpdatingLocation];
+    
 }
 
 #pragma mark - CoreLocation
@@ -46,12 +60,13 @@ static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json?auth_token=%@"
     [SVProgressHUD dismissWithSuccess:@"Localizado"];
     lat = newLocation.coordinate.latitude;
     lng = newLocation.coordinate.longitude;
+    slideToCancel.enabled = YES;
     DebugLog(@"location: %d, %d", lat, lng);
 }
 
 #pragma mark - Panic HTTP
 
-- (void)didTouchPanicButton:(id)sender
+- (void)alerted;
 {
     [SVProgressHUD showInView:self.view];
 
@@ -84,4 +99,5 @@ static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json?auth_token=%@"
     [SVProgressHUD dismissWithError:[[request error] localizedDescription]];
     //TODO phone hack
 }
+
 @end
