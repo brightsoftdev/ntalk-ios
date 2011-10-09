@@ -31,6 +31,8 @@ static int maxContacts = 10;
  
     UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didTouchAddContactButton:)];
     self.navigationItem.rightBarButtonItem = addButtonItem;
+    
+    self.navigationController.navigationBarHidden = NO;
     [addButtonItem release];
 }
 

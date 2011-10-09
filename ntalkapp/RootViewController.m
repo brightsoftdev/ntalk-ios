@@ -26,12 +26,6 @@ static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json?auth_token=%@"
     [SVProgressHUD showInView:self.view status:@"localizando"];
     [panicButton setEnabled:NO];
     
-    UIBarButtonItem *b = [[UIBarButtonItem alloc] initWithTitle:@"Preferencias" style:UIBarButtonItemStylePlain target:self action:@selector(showPreferences)];
-    self.navigationItem.leftBarButtonItem = b;
-    [b release];
-    
-    self.title = @"";
-    
     BOOL ok = [CLLocationManager locationServicesEnabled];
     if (!ok) {
         [SVProgressHUD dismissWithError:@"Oh, well"];
@@ -43,51 +37,6 @@ static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json?auth_token=%@"
     [lm release];
     self.locman.delegate = self;
     [self.locman startUpdatingLocation];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
-
--(void)showPreferences
-{
-    DebugLog(@"show preferences");
-    UIViewController *vc = [[PreferencesViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    
-    [self.navigationController pushViewController:vc animated:YES];
-    [vc release];
 }
 
 #pragma mark - CoreLocation

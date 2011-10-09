@@ -12,11 +12,12 @@
 @implementation ntalkappAppDelegate
 
 @synthesize window = _window;
-@synthesize navigationController = _navigationController;
+@synthesize tabBarController = _tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window.rootViewController = self.navigationController;
+    self.window.rootViewController = self.tabBarController;
+    self.tabBarController.selectedIndex = 1;
     [self.window makeKeyAndVisible];
     
     id token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
@@ -86,7 +87,7 @@
 - (void)dealloc
 {
     [_window release];
-    [_navigationController release];
+    [_tabBarController release];
     [super dealloc];
 }
 

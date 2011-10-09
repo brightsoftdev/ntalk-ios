@@ -56,6 +56,9 @@
 		95822020143954A500FA918A /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9582201E143954A500FA918A /* PreferencesViewController.xib */; };
 		959786A71439662F000CF7C7 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 959786A51439662F000CF7C7 /* ContactsViewController.m */; };
 		959786A81439662F000CF7C7 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 959786A61439662F000CF7C7 /* ContactsViewController.xib */; };
+		95D97FD114418BB900D5BA5A /* 184-warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D97FD014418BB900D5BA5A /* 184-warning.png */; };
+		95D97FD414418BC900D5BA5A /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D97FD314418BC900D5BA5A /* 112-group.png */; };
+		95D97FD614418C8400D5BA5A /* 123-id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D97FD514418C8400D5BA5A /* 123-id-card.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +142,9 @@
 		959786A51439662F000CF7C7 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		959786A61439662F000CF7C7 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
 		95C7800F14393CDD001F8701 /* CoreLocationSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreLocationSimulator.h; path = ../CoreLocationSimulator.h; sourceTree = "<group>"; };
+		95D97FD014418BB900D5BA5A /* 184-warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "184-warning.png"; sourceTree = "<group>"; };
+		95D97FD314418BC900D5BA5A /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
+		95D97FD514418C8400D5BA5A /* 123-id-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "123-id-card.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +292,9 @@
 			isa = PBXGroup;
 			children = (
 				9558F1B0142AFBFC00A76D67 /* button.png */,
+				95D97FD014418BB900D5BA5A /* 184-warning.png */,
+				95D97FD514418C8400D5BA5A /* 123-id-card.png */,
+				95D97FD314418BC900D5BA5A /* 112-group.png */,
 				9558F1B1142AFBFC00A76D67 /* contacts.png */,
 				9558F1B2142AFBFC00A76D67 /* gift.png */,
 			);
@@ -410,6 +419,9 @@
 				95822020143954A500FA918A /* PreferencesViewController.xib in Resources */,
 				959786A81439662F000CF7C7 /* ContactsViewController.xib in Resources */,
 				956F6C5B143C261C00E21B54 /* ContactDetailsViewController.xib in Resources */,
+				95D97FD114418BB900D5BA5A /* 184-warning.png in Resources */,
+				95D97FD414418BC900D5BA5A /* 112-group.png in Resources */,
+				95D97FD614418C8400D5BA5A /* 123-id-card.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

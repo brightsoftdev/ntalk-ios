@@ -22,7 +22,6 @@
 @property (nonatomic, retain) IBOutlet UIButton *panicButton;
 @property (nonatomic, retain) CLLocationManager *locman;
 
-- (void) showPreferences;
 - (IBAction)didTouchPanicButton:(id)sender;
 
 @end
