@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		95183752144238DA00AB09C2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95183751144238DA00AB09C2 /* AudioToolbox.framework */; };
+		9518375714423DA400AB09C2 /* KVPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9518375514423DA400AB09C2 /* KVPasscodeViewController.m */; };
+		9518375814423DA400AB09C2 /* KVPasscodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9518375614423DA400AB09C2 /* KVPasscodeViewController.xib */; };
 		951CD8DE1434311E005DE354 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CD8DD1434311E005DE354 /* JSONKit.m */; };
 		951CD8E2143589E8005DE354 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CD8E1143589E8005DE354 /* BaseViewController.m */; };
 		951CD8F514358FBC005DE354 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 951CD8F214358FBC005DE354 /* SVProgressHUD.bundle */; };
@@ -68,6 +70,9 @@
 
 /* Begin PBXFileReference section */
 		95183751144238DA00AB09C2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9518375414423DA400AB09C2 /* KVPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVPasscodeViewController.h; sourceTree = "<group>"; };
+		9518375514423DA400AB09C2 /* KVPasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVPasscodeViewController.m; sourceTree = "<group>"; };
+		9518375614423DA400AB09C2 /* KVPasscodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KVPasscodeViewController.xib; sourceTree = "<group>"; };
 		951CD8DC1434311E005DE354 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		951CD8DD1434311E005DE354 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		951CD8E0143589E8005DE354 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -179,6 +184,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9518375914423DAA00AB09C2 /* KVPasscodeView */ = {
+			isa = PBXGroup;
+			children = (
+				9518375414423DA400AB09C2 /* KVPasscodeViewController.h */,
+				9518375514423DA400AB09C2 /* KVPasscodeViewController.m */,
+				9518375614423DA400AB09C2 /* KVPasscodeViewController.xib */,
+			);
+			name = KVPasscodeView;
+			sourceTree = "<group>";
+		};
 		951CD8DB1434311E005DE354 /* JSONKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +300,7 @@
 				95822021143954B100FA918A /* Preferences */,
 				954EDAF41441A12C00A04CFA /* Contacts */,
 				954EDB001441B10F00A04CFA /* SlideToCancel */,
+				9518375914423DAA00AB09C2 /* KVPasscodeView */,
 				9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */,
 				9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */,
 				95C7800F14393CDD001F8701 /* CoreLocationSimulator.h */,
@@ -459,6 +475,7 @@
 				954EDB071441B14300A04CFA /* sliderMaxMin-02.png in Resources */,
 				954EDB081441B14300A04CFA /* sliderThumb.png in Resources */,
 				954EDB091441B14300A04CFA /* sliderTrack.png in Resources */,
+				9518375814423DA400AB09C2 /* KVPasscodeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +511,7 @@
 				956F6C56143C0CD600E21B54 /* DictionaryHelper.m in Sources */,
 				956F6C5A143C261C00E21B54 /* ContactDetailsViewController.m in Sources */,
 				954EDB031441B10F00A04CFA /* SlideToCancelViewController.m in Sources */,
+				9518375714423DA400AB09C2 /* KVPasscodeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

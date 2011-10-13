@@ -8,6 +8,10 @@
 
 #import "PreferencesViewController.h"
 
+@interface PreferencesViewController ()
+- (void) switchChanged:(id)sender;
+@end
+
 @implementation PreferencesViewController
 
 
@@ -36,7 +40,7 @@
 	
 	NSMutableArray *tmp = [NSMutableArray array];
 	
-	rows = [NSArray arrayWithObjects:@"Contraseña", nil];
+	rows = [NSArray arrayWithObjects:@"Usar contraseña", @"Cambiar contraseña", nil];
 	d = [NSDictionary dictionaryWithObjectsAndKeys:rows,@"rows",@"Seguridad",@"title",nil];
 	[tmp addObject:d];
 	
@@ -57,11 +61,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void) didPushBackButtonItem:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -76,15 +75,29 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell* cell;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"SwitchCell"];
+        if( cell == nil ) {
+            cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"SwitchCell"] autorelease];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
+            cell.accessoryView = switchView;
+            [switchView setOn:NO animated:NO];
+            [switchView addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
+            [switchView release];
+        }
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"] autorelease];
+        }
+        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
     }
-    
     cell.textLabel.text = [[[data objectAtIndex:indexPath.section] objectForKey:@"rows"] objectAtIndex:indexPath.row]; 
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
@@ -105,6 +118,11 @@
     
     [self.navigationController pushViewController:vc animated:YES];
     [vc release];
+}
+
+- (void) switchChanged:(id)sender {
+    UISwitch* switchControl = sender;
+    NSLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
 }
 
 @end

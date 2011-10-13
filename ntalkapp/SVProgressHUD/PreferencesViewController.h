@@ -13,6 +13,4 @@
     NSArray *data;
 }
 
--(IBAction)didPushBackButtonItem:(id)sender;
-
 @end
