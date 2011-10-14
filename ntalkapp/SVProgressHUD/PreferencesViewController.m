@@ -8,6 +8,7 @@
 
 #import "PreferencesViewController.h"
 
+
 @interface PreferencesViewController ()
 - (void) switchChanged:(id)sender;
 @end
@@ -40,9 +41,12 @@
 	
 	NSMutableArray *tmp = [NSMutableArray array];
 	
-	rows = [NSArray arrayWithObjects:@"Usar contraseña", @"Cambiar contraseña", nil];
+	rows = [NSArray arrayWithObjects:@"Usar contraseña", nil];
 	d = [NSDictionary dictionaryWithObjectsAndKeys:rows,@"rows",@"Seguridad",@"title",nil];
 	[tmp addObject:d];
+    
+    NSNumber *uses = (NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:@"usesPassword"];
+    usesPassword = ([uses isEqualToNumber:[NSNumber numberWithBool:YES]]);
 	
     data = [[NSArray alloc] initWithArray:tmp];
 }
@@ -84,7 +88,9 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
             cell.accessoryView = switchView;
-            [switchView setOn:NO animated:NO];
+            
+            
+            [switchView setOn:usesPassword animated:NO];
             [switchView addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
             [switchView release];
         }
@@ -97,7 +103,7 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
     }
-    cell.textLabel.text = [[[data objectAtIndex:indexPath.section] objectForKey:@"rows"] objectAtIndex:indexPath.row]; 
+    cell.textLabel.text = [[[data objectAtIndex:indexPath.section] objectForKey:@"rows"] objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -122,7 +128,63 @@
 
 - (void) switchChanged:(id)sender {
     UISwitch* switchControl = sender;
-    NSLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
+    DebugLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
+    
+    KVPasscodeViewController *passcodeController = [[KVPasscodeViewController alloc] init];
+    passcodeController.delegate = self;
+    UINavigationController *passcodeNavigationController = [[UINavigationController alloc] initWithRootViewController:passcodeController];
+    
+    if (switchControl.on) {
+        mode = TURNING_ON;
+        passcodeController.instructionLabel.text = NSLocalizedString(@"Ingresa tu nueva contraseña", @"");
+    } else {
+        mode = TURNING_OFF;
+        passcodeController.instructionLabel.text = NSLocalizedString(@"Ingresa tu contraseña para hacer cambios", @"");
+    }
+    
+    [self.navigationController presentModalViewController:passcodeNavigationController animated:YES];
+    [passcodeNavigationController release];
+    [passcodeController release];
+    
+}
+
+#pragma mark - PasscodeViewDelegate
+- (void)passcodeController:(KVPasscodeViewController *)controller passcodeEntered:(NSString *)passCode {
+    switch (mode) {
+        case TURNING_ON:
+            _tempPassword = passCode;
+            mode = CONFIRMING;
+            controller.instructionLabel.text = NSLocalizedString(@"Por favor confirma tu contraseña", @"");
+            [controller resetWithAnimation:KVPasscodeAnimationStyleConfirm];
+            [_tempPassword retain];
+            break;
+        case CONFIRMING:
+            if ([passCode isEqualToString:_tempPassword]) {
+                [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:@"usesPassword"];
+                [[NSUserDefaults standardUserDefaults] setValue:passCode forKey:@"passCode"];
+                [controller dismissModalViewControllerAnimated:YES];
+            } else {
+                controller.instructionLabel.text = NSLocalizedString(@"Las contraseñas no coinciden", @"");
+                [controller resetWithAnimation:KVPasscodeAnimationStyleInvalid];
+                mode = TURNING_ON;
+            }
+            _tempPassword = nil;
+            [_tempPassword release];
+            break;
+        case TURNING_OFF:
+            //TODO meter un boton de cancelar
+            if ([passCode isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"passCode"]]) {
+                [[NSUserDefaults standardUserDefaults] setValue:[NSNull null] forKey:@"passCode"];
+                [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:NO] forKey:@"usesPassword"];
+                [controller dismissModalViewControllerAnimated:YES];
+            } else {
+                controller.instructionLabel.text = NSLocalizedString(@"Contraseña incorrecta", @"");
+                [controller resetWithAnimation:KVPasscodeAnimationStyleInvalid];
+            }
+            break;
+        default:
+            break;
+    }
 }
 
 @end

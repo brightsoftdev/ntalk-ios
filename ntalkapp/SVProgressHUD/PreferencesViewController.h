@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ContactsViewController.h"
+#import "KVPasscodeViewController.h"
 
-@interface PreferencesViewController : UITableViewController {
+#define TURNING_ON 1
+#define TURNING_OFF 2
+#define CONFIRMING 3
+
+@interface PreferencesViewController : UITableViewController <KVPasscodeViewControllerDelegate> {
     NSArray *data;
+    BOOL usesPassword;
+    int mode;
+    NSString *_tempPassword;
 }
+
+- (void)passcodeController:(KVPasscodeViewController *)controller passcodeEntered:(NSString *)passCode;
 
 @end
