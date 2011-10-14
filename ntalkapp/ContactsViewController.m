@@ -11,7 +11,7 @@
 @implementation ContactsViewController
 @synthesize table = _table, contacts = _contacts;
 
-static NSString *contactsUrl = @"http://ntalk.dev/api/v1/contacts.json";
+static NSString *contactsUrl = @"/api/v1/contacts.json";
 static int maxContacts = 10;
 
 - (void)dealloc

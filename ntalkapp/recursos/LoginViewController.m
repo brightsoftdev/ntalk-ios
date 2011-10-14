@@ -11,7 +11,7 @@
 @implementation LoginViewController
 @synthesize tableView = _tableView, loadCell = _loadCell;
 @synthesize emailValue, passwordValue;
-static NSString *loginUrl = @"http://ntalk.dev/users/sign_in.json";
+static NSString *loginUrl = @"/users/sign_in.json";
 
 - (void)dealloc {
     [_tableView release];

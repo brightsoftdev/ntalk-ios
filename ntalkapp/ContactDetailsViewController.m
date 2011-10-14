@@ -13,8 +13,8 @@
 @synthesize nameTextField, emailTextField, deleteButton;
 @synthesize contact;
 
-static NSString *contactUrl  = @"http://ntalk.dev/api/v1/contacts/%@.json";
-static NSString *contactsUrl = @"http://ntalk.dev/api/v1/contacts.json";
+static NSString *contactUrl  = @"/api/v1/contacts/%@.json";
+static NSString *contactsUrl = @"/api/v1/contacts.json";
 
 - (void)dealloc {
     [contact release];

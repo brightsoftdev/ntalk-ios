@@ -27,16 +27,23 @@
 
 #import "BaseViewController.h"
 
+#define LOCAL_URL 1
+#define TEST_URL 2
+#define PRODUCTION_URL 3
+#define URL_MODE LOCAL_URL
+
 @interface BaseViewController () 
 - (NSString*) appendTokenToURL:(NSString*)baseUrl;
+- (NSString*) appendBaseToURL:(NSString*)url;
 @end
 
 @implementation BaseViewController
-
 #pragma mark - HTTP requests
 
 - (ASIHTTPRequest*) requestWithURL:(NSString*) s {
+    s = [self appendBaseToURL:s];
     DebugLog(@"haciendo peticion a %@", s);
+    
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:s]];
 	[self addRequest:request];
 	return request;
@@ -50,6 +57,7 @@
 }
 
 - (ASIFormDataRequest*) formRequestWithURL:(NSString*) s {
+    s = [self appendBaseToURL:s];
     DebugLog(@"haciendo peticion a %@", s);
 	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:s]];
 	[self addRequest:request];
@@ -68,6 +76,25 @@
     NSString *url = [baseUrl stringByAppendingString:@"?auth_token=%@"];
     url = [NSString stringWithFormat:url, token];
     return url;
+}
+
+- (NSString *)appendBaseToURL:(NSString *)url {
+    NSString *base;
+    
+    switch (URL_MODE) {
+        case PRODUCTION_URL:
+            base = @"http://www.ntalkapp.com";
+            break;
+        case TEST_URL:
+            base = @"http://ntalkntalk.heroku.com";
+            break;
+        case LOCAL_URL:
+        default:
+            base = @"http://ntalk.dev";
+            break;
+    }
+    
+    return [base stringByAppendingString:url];
 }
 
 - (void) addRequest:(ASIHTTPRequest*)request {

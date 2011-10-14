@@ -10,7 +10,7 @@
 
 @implementation RootViewController
 @synthesize locman;
-static NSString *panicUrl = @"http://ntalk.dev/api/v1/panics.json";
+static NSString *panicUrl = @"/api/v1/panics.json";
 
 - (void)dealloc
 { 
