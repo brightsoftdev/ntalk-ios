@@ -34,6 +34,20 @@ static int maxContacts = 10;
     
     self.navigationController.navigationBarHidden = NO;
     [addButtonItem release];
+    
+    if ((NSNumber *)[[NSUserDefaults standardUserDefaults] valueForKey:@"usesPassword"]) {
+        UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(didCancelPasscodeEntry:)];
+        KVPasscodeViewController *passcodeController = [[KVPasscodeViewController alloc] init];
+        passcodeController.delegate = self;
+        passcodeController.navigationItem.rightBarButtonItem = cancelButtonItem;
+        UINavigationController *passcodeNavigationController = [[UINavigationController alloc] initWithRootViewController:passcodeController];
+        
+        passcodeController.instructionLabel.text = NSLocalizedString(@"Ingresa contraseña para ver contactos", @"");
+        [self.navigationController presentModalViewController:passcodeNavigationController animated:YES];
+        [passcodeNavigationController release];
+        [passcodeController release];
+        [cancelButtonItem release];
+    }
 }
 
 - (void)viewDidUnload
@@ -115,6 +129,7 @@ static int maxContacts = 10;
 
 #pragma mark - Async HTTP
 
+
 - (void) requestFinished:(ASIHTTPRequest *)request 
 {
     [SVProgressHUD dismiss];
@@ -129,4 +144,19 @@ static int maxContacts = 10;
     [SVProgressHUD dismissWithError:[[request error] localizedDescription]];
 }
 
+
+#pragma mark - Passcode Delegate
+- (void)passcodeController:(KVPasscodeViewController *)controller passcodeEntered:(NSString *)passCode {
+    if ([passCode isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"passCode"]]) {
+        [controller dismissModalViewControllerAnimated:YES];
+    } else {
+        controller.instructionLabel.text = NSLocalizedString(@"Contraseña incorrecta", @"");
+        [controller resetWithAnimation:KVPasscodeAnimationStyleInvalid];
+    }
+}
+
+-(void)didCancelPasscodeEntry:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+    self.tabBarController.selectedIndex = 1;
+}
 @end

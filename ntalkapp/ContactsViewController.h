@@ -12,10 +12,13 @@
 #import "JSONKit.h"
 #import "AsyncCell.h"
 #import "ContactDetailsViewController.h"
+#import "KVPasscodeViewController.h"
 
-@interface ContactsViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate>
+@interface ContactsViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate, KVPasscodeViewControllerDelegate>
 
 - (IBAction)didTouchAddContactButton:(id)sender;
+- (void)passcodeController:(KVPasscodeViewController *)controller passcodeEntered:(NSString *)passCode;
+- (void)didCancelPasscodeEntry:(id)sender;
 
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) NSArray *contacts;
