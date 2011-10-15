@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "KVPasscodeViewController.h"
 
+#define NONE 0
 #define TURNING_ON 1
 #define TURNING_OFF 2
 #define CONFIRMING 3
@@ -17,9 +18,12 @@
     NSArray *data;
     BOOL usesPassword;
     int mode;
-    NSString *_tempPassword;
+    NSString *tempPassword;
 }
 
+@property (nonatomic, retain) UISwitch *switchView;
+
 - (void)passcodeController:(KVPasscodeViewController *)controller passcodeEntered:(NSString *)passCode;
+- (void) didCancelPasscode:(id) sender;
 
 @end

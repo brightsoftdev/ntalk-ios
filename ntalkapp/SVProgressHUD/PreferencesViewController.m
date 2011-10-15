@@ -14,7 +14,7 @@
 @end
 
 @implementation PreferencesViewController
-
+@synthesize switchView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,6 +29,7 @@
 - (void) dealloc 
 {
     [data dealloc];
+    [switchView release];
     [super dealloc];
 }
 
@@ -57,6 +58,7 @@
 {
     [super viewDidLoad];
     [self setupCellData];
+    mode = NONE;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -84,15 +86,14 @@
     if (indexPath.row == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"SwitchCell"];
         if( cell == nil ) {
-            cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"SwitchCell"] autorelease];
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SwitchCell"] autorelease];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
+            switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
             cell.accessoryView = switchView;
             
             
             [switchView setOn:usesPassword animated:NO];
             [switchView addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
-            [switchView release];
         }
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
@@ -127,14 +128,14 @@
 }
 
 - (void) switchChanged:(id)sender {
-    UISwitch* switchControl = sender;
-    DebugLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
-    
+
+    UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(didCancelPasscode:)];
     KVPasscodeViewController *passcodeController = [[KVPasscodeViewController alloc] init];
     passcodeController.delegate = self;
+    passcodeController.navigationItem.rightBarButtonItem = cancelButtonItem;
     UINavigationController *passcodeNavigationController = [[UINavigationController alloc] initWithRootViewController:passcodeController];
     
-    if (switchControl.on) {
+    if (switchView.on) {
         mode = TURNING_ON;
         passcodeController.instructionLabel.text = NSLocalizedString(@"Ingresa tu nueva contraseña", @"");
     } else {
@@ -145,34 +146,35 @@
     [self.navigationController presentModalViewController:passcodeNavigationController animated:YES];
     [passcodeNavigationController release];
     [passcodeController release];
-    
+    [cancelButtonItem release];
 }
 
 #pragma mark - PasscodeViewDelegate
 - (void)passcodeController:(KVPasscodeViewController *)controller passcodeEntered:(NSString *)passCode {
     switch (mode) {
         case TURNING_ON:
-            _tempPassword = passCode;
+            tempPassword = passCode;
             mode = CONFIRMING;
             controller.instructionLabel.text = NSLocalizedString(@"Por favor confirma tu contraseña", @"");
             [controller resetWithAnimation:KVPasscodeAnimationStyleConfirm];
-            [_tempPassword retain];
+            [tempPassword retain];
             break;
         case CONFIRMING:
-            if ([passCode isEqualToString:_tempPassword]) {
+            if ([passCode isEqualToString:tempPassword]) {
                 [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:@"usesPassword"];
                 [[NSUserDefaults standardUserDefaults] setValue:passCode forKey:@"passCode"];
+
                 [controller dismissModalViewControllerAnimated:YES];
+                mode = NONE;
             } else {
                 controller.instructionLabel.text = NSLocalizedString(@"Las contraseñas no coinciden", @"");
                 [controller resetWithAnimation:KVPasscodeAnimationStyleInvalid];
                 mode = TURNING_ON;
             }
-            _tempPassword = nil;
-            [_tempPassword release];
+            tempPassword = nil;
+            [tempPassword release];
             break;
         case TURNING_OFF:
-            //TODO meter un boton de cancelar
             if ([passCode isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"passCode"]]) {
                 [[NSUserDefaults standardUserDefaults] setValue:[NSNull null] forKey:@"passCode"];
                 [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:NO] forKey:@"usesPassword"];
@@ -185,6 +187,14 @@
         default:
             break;
     }
+}
+
+-(void)didCancelPasscode:(id)sender {
+    mode = NONE;
+    tempPassword = nil;
+    switchView.on = !switchView.on;
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end

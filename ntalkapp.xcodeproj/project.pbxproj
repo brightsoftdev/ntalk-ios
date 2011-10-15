@@ -429,6 +429,7 @@
 		9558F169142AF8DB00A76D67 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "N-talk";
 			};
 			buildConfigurationList = 9558F16C142AF8DB00A76D67 /* Build configuration list for PBXProject "ntalkapp" */;
@@ -595,7 +596,9 @@
 				GCC_PREFIX_HEADER = "ntalkapp/ntalkapp-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ntalkapp/ntalkapp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -607,7 +610,9 @@
 				GCC_PREFIX_HEADER = "ntalkapp/ntalkapp-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ntalkapp/ntalkapp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
