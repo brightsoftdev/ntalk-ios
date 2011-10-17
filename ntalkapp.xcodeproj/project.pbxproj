@@ -16,6 +16,11 @@
 		951CD8F614358FBC005DE354 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CD8F414358FBC005DE354 /* SVProgressHUD.m */; };
 		951CD8F814358FFA005DE354 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951CD8F714358FF9005DE354 /* QuartzCore.framework */; };
 		951CD8FA1435AAB6005DE354 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951CD8F91435AAB6005DE354 /* CoreLocation.framework */; };
+		9536B7F2144BF1CF003839C0 /* RaisedTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9536B7F1144BF1CF003839C0 /* RaisedTabBarController.m */; };
+		9536B7F7144BF3E9003839C0 /* camera_button_take.png in Resources */ = {isa = PBXBuildFile; fileRef = 9536B7F3144BF3E9003839C0 /* camera_button_take.png */; };
+		9536B7F8144BF3E9003839C0 /* camera_button_take@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9536B7F4144BF3E9003839C0 /* camera_button_take@2x.png */; };
+		9536B7F9144BF3E9003839C0 /* tabBar_cameraButton_ready_matte.png in Resources */ = {isa = PBXBuildFile; fileRef = 9536B7F5144BF3E9003839C0 /* tabBar_cameraButton_ready_matte.png */; };
+		9536B7FA144BF3E9003839C0 /* tabBar_cameraButton_ready_matte@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9536B7F6144BF3E9003839C0 /* tabBar_cameraButton_ready_matte@2x.png */; };
 		954EDB031441B10F00A04CFA /* SlideToCancelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954EDB021441B10F00A04CFA /* SlideToCancelViewController.m */; };
 		954EDB071441B14300A04CFA /* sliderMaxMin-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 954EDB041441B14300A04CFA /* sliderMaxMin-02.png */; };
 		954EDB081441B14300A04CFA /* sliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 954EDB051441B14300A04CFA /* sliderThumb.png */; };
@@ -82,6 +87,12 @@
 		951CD8F414358FBC005DE354 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		951CD8F714358FF9005DE354 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		951CD8F91435AAB6005DE354 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9536B7F0144BF1CF003839C0 /* RaisedTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RaisedTabBarController.h; path = RaisedTabBar/RaisedTabBarController.h; sourceTree = "<group>"; };
+		9536B7F1144BF1CF003839C0 /* RaisedTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RaisedTabBarController.m; path = RaisedTabBar/RaisedTabBarController.m; sourceTree = "<group>"; };
+		9536B7F3144BF3E9003839C0 /* camera_button_take.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_button_take.png; sourceTree = "<group>"; };
+		9536B7F4144BF3E9003839C0 /* camera_button_take@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_button_take@2x.png"; sourceTree = "<group>"; };
+		9536B7F5144BF3E9003839C0 /* tabBar_cameraButton_ready_matte.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBar_cameraButton_ready_matte.png; sourceTree = "<group>"; };
+		9536B7F6144BF3E9003839C0 /* tabBar_cameraButton_ready_matte@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar_cameraButton_ready_matte@2x.png"; sourceTree = "<group>"; };
 		954EDB011441B10F00A04CFA /* SlideToCancelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideToCancelViewController.h; sourceTree = "<group>"; };
 		954EDB021441B10F00A04CFA /* SlideToCancelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideToCancelViewController.m; sourceTree = "<group>"; };
 		954EDB041441B14300A04CFA /* sliderMaxMin-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sliderMaxMin-02.png"; path = "../Resources/sliderMaxMin-02.png"; sourceTree = "<group>"; };
@@ -226,6 +237,19 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		9536B7EE144BF16E003839C0 /* RaisedTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				9536B7F0144BF1CF003839C0 /* RaisedTabBarController.h */,
+				9536B7F1144BF1CF003839C0 /* RaisedTabBarController.m */,
+				9536B7F3144BF3E9003839C0 /* camera_button_take.png */,
+				9536B7F4144BF3E9003839C0 /* camera_button_take@2x.png */,
+				9536B7F5144BF3E9003839C0 /* tabBar_cameraButton_ready_matte.png */,
+				9536B7F6144BF3E9003839C0 /* tabBar_cameraButton_ready_matte@2x.png */,
+			);
+			name = RaisedTabBarController;
+			sourceTree = "<group>";
+		};
 		954EDAF41441A12C00A04CFA /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +314,7 @@
 		9558F17C142AF8DC00A76D67 /* ntalkapp */ = {
 			isa = PBXGroup;
 			children = (
+				9536B7EE144BF16E003839C0 /* RaisedTabBarController */,
 				9558F1AF142AFBFC00A76D67 /* Resources */,
 				9558F196142AF93400A76D67 /* Walktrough */,
 				9558F1BA142B022800A76D67 /* ASIHttpRequest */,
@@ -477,6 +502,10 @@
 				954EDB081441B14300A04CFA /* sliderThumb.png in Resources */,
 				954EDB091441B14300A04CFA /* sliderTrack.png in Resources */,
 				9518375814423DA400AB09C2 /* KVPasscodeViewController.xib in Resources */,
+				9536B7F7144BF3E9003839C0 /* camera_button_take.png in Resources */,
+				9536B7F8144BF3E9003839C0 /* camera_button_take@2x.png in Resources */,
+				9536B7F9144BF3E9003839C0 /* tabBar_cameraButton_ready_matte.png in Resources */,
+				9536B7FA144BF3E9003839C0 /* tabBar_cameraButton_ready_matte@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +542,7 @@
 				956F6C5A143C261C00E21B54 /* ContactDetailsViewController.m in Sources */,
 				954EDB031441B10F00A04CFA /* SlideToCancelViewController.m in Sources */,
 				9518375714423DA400AB09C2 /* KVPasscodeViewController.m in Sources */,
+				9536B7F2144BF1CF003839C0 /* RaisedTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
