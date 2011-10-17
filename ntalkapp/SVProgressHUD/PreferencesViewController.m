@@ -15,10 +15,11 @@
 
 @implementation PreferencesViewController
 @synthesize switchView;
+@synthesize table;
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)init
 {
-    self = [super initWithStyle:style];
+    self = [super init];
     if (self) {
         self.title = @"Preferencias";
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Enviar Alerta" style:UIBarButtonItemStyleBordered target:self action:@selector(didPushBackButtonItem:)];

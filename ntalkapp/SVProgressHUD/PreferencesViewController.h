@@ -14,7 +14,7 @@
 #define TURNING_OFF 2
 #define CONFIRMING 3
 
-@interface PreferencesViewController : UITableViewController <KVPasscodeViewControllerDelegate> {
+@interface PreferencesViewController : UIViewController <KVPasscodeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource> {
     NSArray *data;
     BOOL usesPassword;
     int mode;
@@ -22,6 +22,7 @@
 }
 
 @property (nonatomic, retain) UISwitch *switchView;
+@property (nonatomic, retain) IBOutlet UITableView *table;
 
 - (void)passcodeController:(KVPasscodeViewController *)controller passcodeEntered:(NSString *)passCode;
 - (void) didCancelPasscode:(id) sender;
