@@ -70,6 +70,7 @@
 		959786A81439662F000CF7C7 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 959786A61439662F000CF7C7 /* ContactsViewController.xib */; };
 		95C00A81144D2BA600561C9C /* delete-button-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 95C00A7F144D2BA500561C9C /* delete-button-highlight.png */; };
 		95C00A82144D2BA600561C9C /* delete-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 95C00A80144D2BA500561C9C /* delete-button.png */; };
+		95C00A89144D33BE00561C9C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 95C00A88144D33BE00561C9C /* logo.png */; };
 		95D97FD114418BB900D5BA5A /* 184-warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D97FD014418BB900D5BA5A /* 184-warning.png */; };
 		95D97FD414418BC900D5BA5A /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D97FD314418BC900D5BA5A /* 112-group.png */; };
 		95D97FD614418C8400D5BA5A /* 123-id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D97FD514418C8400D5BA5A /* 123-id-card.png */; };
@@ -172,6 +173,7 @@
 		959786A61439662F000CF7C7 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
 		95C00A7F144D2BA500561C9C /* delete-button-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-button-highlight.png"; sourceTree = "<group>"; };
 		95C00A80144D2BA500561C9C /* delete-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-button.png"; sourceTree = "<group>"; };
+		95C00A88144D33BE00561C9C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		95C7800F14393CDD001F8701 /* CoreLocationSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreLocationSimulator.h; path = ../CoreLocationSimulator.h; sourceTree = "<group>"; };
 		95D97FD014418BB900D5BA5A /* 184-warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "184-warning.png"; sourceTree = "<group>"; };
 		95D97FD314418BC900D5BA5A /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
@@ -257,9 +259,9 @@
 		954EDAF41441A12C00A04CFA /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				956F6C57143C261C00E21B54 /* ContactDetailsViewController.h */,
 				95C00A7F144D2BA500561C9C /* delete-button-highlight.png */,
 				95C00A80144D2BA500561C9C /* delete-button.png */,
+				956F6C57143C261C00E21B54 /* ContactDetailsViewController.h */,
 				956F6C58143C261C00E21B54 /* ContactDetailsViewController.m */,
 				956F6C59143C261C00E21B54 /* ContactDetailsViewController.xib */,
 				956F6C4D143C0C8700E21B54 /* AsyncCell.h */,
@@ -332,6 +334,8 @@
 				954EDAF41441A12C00A04CFA /* Contacts */,
 				954EDB001441B10F00A04CFA /* SlideToCancel */,
 				9518375914423DAA00AB09C2 /* KVPasscodeView */,
+				95C00A84144D2F2300561C9C /* UI */,
+				95C00A88144D33BE00561C9C /* logo.png */,
 				9558F185142AF8DC00A76D67 /* ntalkappAppDelegate.h */,
 				9558F186142AF8DC00A76D67 /* ntalkappAppDelegate.m */,
 				95C7800F14393CDD001F8701 /* CoreLocationSimulator.h */,
@@ -434,6 +438,13 @@
 			name = Preferences;
 			sourceTree = "<group>";
 		};
+		95C00A84144D2F2300561C9C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -514,6 +525,7 @@
 				9536B7FA144BF3E9003839C0 /* tabBar_cameraButton_ready_matte@2x.png in Resources */,
 				95C00A81144D2BA600561C9C /* delete-button-highlight.png in Resources */,
 				95C00A82144D2BA600561C9C /* delete-button.png in Resources */,
+				95C00A89144D33BE00561C9C /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

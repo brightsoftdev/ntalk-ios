@@ -21,6 +21,7 @@
 }
 
 @property (nonatomic, retain) CLLocationManager *locman;
+@property (nonatomic, retain) IBOutlet UINavigationBar *navBar;
 
 - (void)alerted;
 

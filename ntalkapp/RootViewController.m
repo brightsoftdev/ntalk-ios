@@ -10,6 +10,8 @@
 
 @implementation RootViewController
 @synthesize locman;
+@synthesize navBar;
+
 static NSString *panicUrl = @"/api/v1/panics.json";
 
 - (void)dealloc
@@ -39,9 +41,13 @@ static NSString *panicUrl = @"/api/v1/panics.json";
     [SVProgressHUD showInView:self.view status:@"localizando"];
     slideToCancel.enabled = NO;
     
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
+    self.navBar.topItem.titleView = imageView;
+    [imageView release];
+    
     BOOL ok = [CLLocationManager locationServicesEnabled];
     if (!ok) {
-        [SVProgressHUD dismissWithError:@"Oh, well"];
+        [SVProgressHUD dismissWithError:@"No se pudo localizar"];
         slideToCancel.enabled = YES;
     }
     
