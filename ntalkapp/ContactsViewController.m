@@ -34,8 +34,21 @@ static int maxContacts = 10;
     
     self.navigationController.navigationBarHidden = NO;
     [addButtonItem release];
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSNumber *usesPassword = [[NSUserDefaults standardUserDefaults] valueForKey:@"usesPassword"];
     
-    if ((NSNumber *)[[NSUserDefaults standardUserDefaults] valueForKey:@"usesPassword"]) {
+    if ([usesPassword boolValue]) {
         UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(didCancelPasscodeEntry:)];
         KVPasscodeViewController *passcodeController = [[KVPasscodeViewController alloc] init];
         passcodeController.delegate = self;
@@ -48,13 +61,6 @@ static int maxContacts = 10;
         [passcodeController release];
         [cancelButtonItem release];
     }
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated
